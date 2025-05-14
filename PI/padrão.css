@@ -1,0 +1,121 @@
+body {
+        margin: 0;
+        padding: 0;
+        background-image: url("telafundo.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed; /* Fixa no fundo */
+        background-size: cover; /* ou 'contain' se quiser toda visível */
+}
+.PAI{
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+  
+.teclado-pai {
+    display: flex;
+    flex-direction: row;
+    gap: 22px;
+    margin-top: 655px;
+    margin-left: 614px;
+    position: absolute;
+
+}
+
+.button-numbers {
+    background-color: #c0c0c0;
+    color: black;
+    border: 1px;
+    border-radius: 15px;
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    width: 83px;
+    height: 42px;
+}
+ 
+.teclado-numerico {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+
+    
+}
+
+.teclado-linha {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+
+}
+
+
+.teclado-lateral{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.button-lateral {
+    color: black;
+    border: 1px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+    height: 42px;
+}
+
+.botao-superior {
+    background-color: #e2e2e2;
+    color: black;
+    border: 1px solid;
+    border-radius: 20px;
+    font-size: 16px;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    width: 70px;
+    height: 42px;
+    border-color: #ffffff;
+
+}
+.botoes-laterais {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 90px;
+    margin-bottom: 50px;
+}
+.div-superior {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 174.5px;
+    margin-left: 455px;
+    position: absolute;
+}
+.tela {
+    width: 525px;
+    height: 338px;
+}
+.cartao {
+    margin-top: 400px;
+    margin-left: 1230px;
+    position: absolute;
+    width: 128px;
+    
+}
+.botao-cartao {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
