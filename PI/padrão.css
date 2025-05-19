@@ -19,10 +19,12 @@ body {
 .teclado-pai {
     display: flex;
     flex-direction: row;
-    gap: 22px;
-    margin-top: 655px;
-    margin-left: 614px;
+    gap: 18px;
+    margin-top: 510px;
+    margin-left: 285px;
     position: absolute;
+    background-color: black;
+    padding: 30px;
 
 }
 
@@ -36,15 +38,14 @@ body {
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    width: 83px;
-    height: 42px;
+    width: 67px;
+    height: 35px;
 }
  
 .teclado-numerico {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-
+    gap: 6px;
 
     
 }
@@ -60,20 +61,20 @@ body {
 .teclado-lateral{
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 11px;
 }
 
 .button-lateral {
     color: black;
     border: 1px;
     border-radius: 20px;
-    font-size: 13px;
+    font-size: 11px;
     display: inline-block;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    width: 100px;
-    height: 42px;
+    width: 82px;
+    height: 31px;
 }
 
 .botao-superior {
@@ -86,35 +87,35 @@ body {
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    width: 70px;
-    height: 42px;
+    width: 60px;
+    height: 35px;
     border-color: #ffffff;
 
 }
 .botoes-laterais {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 90px;
-    margin-bottom: 50px;
+    gap: 7.5px;
+    margin-top: 73px;
+    margin-bottom: 40px;
 }
 .div-superior {
     display: flex;
     flex-direction: row;
-    gap: 12px;
+    gap: 10px;
     margin-top: 147px;
-    margin-left: 180px;
+    margin-left: 186px;
     position: absolute;
 }
 .tela {
-    width: 525px;
-    height: 338px;
+    width: 430px;
+    height: 277px;
 }
 .cartao {
-    margin-top: 400px;
-    margin-left: 1230px;
+    margin-top: 325px;
+    margin-left: 827px;
     position: absolute;
-    width: 128px;
+    width: 101px;
     
 }
 .botao-cartao {
