@@ -24,25 +24,50 @@
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
-          <button type="button" class="botao-superior"></button>
+          
         </div>
         <div class="tela">
           <div class="tela-conta">
             <header>
-              <h2><span style="color: yellow;">Olá</span>, Tux da Silva.</h2>
+              <h2>Olá,<span id="nome"></span> <span id="descricao"></span></h2>
             </header>
+            <h3>Use os botões ao lado da tela.</h3>
             <div class="menu">
               <div class="opcoes">
-                <button>Opcao</button>
-                <button>Opcao</button>
-                <button>Opcao</button>
-                <button>Opcao</button>
+                <div class="opcao">
+                  <div class="esquerda"><img src="Imagens/seta-esquerda.png " style="width: 12px;"></div>
+                  <div class="centro">Saldo</div>
+                  <div class="direita"></div>
+                </div>
+                <div class="opcao">
+                  <div class="esquerda"><img src="Imagens/seta-esquerda.png" style="width: 12px;"></div>
+                  <div class="centro">Depositar</div>
+                  <div class="direita"></div>
+                </div>
+                <div class="opcao">
+                  <div class="esquerda"><img src="Imagens/seta-esquerda.png" style="width: 12px;"></div>
+                  <div class="centro">Saque</div>
+                  <div class="direita"></div>
+                </div>
+                
               </div>
               <div class="opcoes">
-                <button>Opcao</button>
-                <button>Opcao</button>
-                <button>Opcao</button>
-                <button>Opcao</button>
+                <div class="opcao">
+                  <div class="esquerda"></div>
+                  <div class="centro">Extrato</div>
+                  <div class="direita"><img src="Imagens/seta-direita.png" style="width: 12px;"></div>
+                </div>
+                <div class="opcao">
+                  <div class="esquerda"></div>
+                  <div class="centro">Transferência</div>
+                  <div class="direita"><img src="Imagens/seta-direita.png" style="width: 12px;"></div>
+                </div>
+                <div class="opcao">
+                  <div class="esquerda"></div>
+                  <div class="centro">Sair</div>
+                  <div class="direita"><img src="Imagens/seta-direita.png" style="width: 12px;"></div>
+                </div>
+                
               </div>
             </div>
           </div>
@@ -51,11 +76,11 @@
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
-          <button type="button" class="botao-superior"></button>
+          
         </div>
 
         <div class="inserircartao">
-           
+
           <div class="detalhe"></div>
           <div class="inserir">
 
@@ -63,9 +88,7 @@
         </div>
 
         <div class="slot-cartao">
-          <div class="cartao">
-            <button type="button" class="botao-cartao" id="botao-cartao"><img src="Imagens/cartao2.png" alt="cartao" width="100%" height="auto"></button>
-          </div>
+          <img id="foto" src="" alt="" class="cartao" width="100%">
         </div>
 
       </div>
@@ -113,5 +136,5 @@
 
   </div>
 
-<script src="paginainicial.js"></script>
+  <script src="dados_usuarios.js"></script>
 </body>

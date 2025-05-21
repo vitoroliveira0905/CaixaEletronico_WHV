@@ -37,12 +37,12 @@ document.querySelector(".cartoes-container").addEventListener("click", () => {
   cartoes[indiceCartao].classList.toggle("inserido");
 });
 
-function redirecionarComDelay() {
-    const img = document.getElementById("tux da silva");
-    img.style.pointerEvents = "none"; // impede múltiplos cliques
-    img.style.opacity = "0.5"; // visualmente desativa
+function redirecionarComDelay(usuario) {
+  const img = cartoes[indiceCartao].src;
+  // img.classList.add("desativado"); // Aplica opacidade se quiser
 
-    setTimeout(() => {
-      window.location.href = "conta_paginainicial.html"; // substitua pela URL desejada
-    }, 3000);
-  }
+  setTimeout(() => {
+    // Redireciona com o nome na URL
+    window.location.href = `conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}&img=${encodeURIComponent(img)}`;
+  }, 3000);
+}

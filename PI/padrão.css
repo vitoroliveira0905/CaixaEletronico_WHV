@@ -13,8 +13,6 @@ html {
     background-attachment: fixed;
 }
 
-
-
 .PAI {
     width: 1200px;
     height: 768px;
@@ -130,8 +128,8 @@ h1 {
 .botoes-laterais {
     display: flex;
     flex-direction: column;
-    gap: 25px;
-    margin-top: 70px;
+    gap: 41px;
+    margin-top: 100px;
     margin-bottom: 40px;
 }
 
