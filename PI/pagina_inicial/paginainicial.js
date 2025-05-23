@@ -17,7 +17,7 @@ const cartoes = document.querySelectorAll(".cartao");
 
 function mostrarCartao(indice) {
   cartoes.forEach(c => {
-    c.classList.remove("ativo", "inserido");
+    c.classList.remove("ativo", "inserido", "bloqueado");
   });
   cartoes[indice].classList.add("ativo");
 }
@@ -32,17 +32,18 @@ function anteriorCartao() {
   mostrarCartao(indiceCartao);
 }
 
-// Inserir cartão ao clicar
-document.querySelector(".cartoes-container").addEventListener("click", () => {
-  cartoes[indiceCartao].classList.toggle("inserido");
-});
-
 function redirecionarComDelay(usuario) {
-  const img = cartoes[indiceCartao].src;
-  // img.classList.add("desativado"); // Aplica opacidade se quiser
+  const cartaoAtual = cartoes[indiceCartao];
+  cartaoAtual.classList.add("bloqueado"); // Desabilita clique no cartão
+  cartaoAtual.classList.add("inserido");  // Animação de inserção
+
+  // 🔒 Desativa as setas do carrossel
+  const botoesCarrossel = document.querySelectorAll(".botao-cartao-navegar");
+  botoesCarrossel.forEach(botao => botao.disabled = true);
 
   setTimeout(() => {
-    // Redireciona com o nome na URL
-    window.location.href = `conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}&img=${encodeURIComponent(img)}`;
-  }, 3000);
+    // Redireciona após 1 segundo
+    window.location.href = `../senha/paginasenha.html?usuario=${encodeURIComponent(usuario)}`;
+  }, 1000);
 }
+

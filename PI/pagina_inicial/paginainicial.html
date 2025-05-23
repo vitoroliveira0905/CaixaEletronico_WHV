@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="padrão_conta.css" rel="stylesheet">
+  <title>Caixa Eletrônico WHV</title>
+  <link href="padrão.css" rel="stylesheet">
 
 </head>
 
@@ -15,7 +15,7 @@
   </div>
   <div class="PAI">
     <div class="barra-superior">
-      <img src="Imagens/logo-whv-bank.png" style="height: 125px; margin-top: 25px;">
+      <img src="../Imagens/logo-whv-bank.png" style="height: 125px; margin-top: 25px;">
       <h1>WHV</h1>
     </div>
     <div class="barra-inferior">
@@ -24,51 +24,17 @@
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
-          
         </div>
         <div class="tela">
-          <div class="tela-conta">
-            <header>
-              <h2>Olá,<span id="nome"></span> <span id="descricao"></span></h2>
-            </header>
-            <h3>Use os botões ao lado da tela.</h3>
-            <div class="menu">
-              <div class="opcoes">
-                <div class="opcao">
-                  <div class="esquerda"><img src="Imagens/seta-esquerda.png " style="width: 12px;"></div>
-                  <div class="centro">Saldo</div>
-                  <div class="direita"></div>
-                </div>
-                <div class="opcao">
-                  <div class="esquerda"><img src="Imagens/seta-esquerda.png" style="width: 12px;"></div>
-                  <div class="centro">Depositar</div>
-                  <div class="direita"></div>
-                </div>
-                <div class="opcao">
-                  <div class="esquerda"><img src="Imagens/seta-esquerda.png" style="width: 12px;"></div>
-                  <div class="centro">Saque</div>
-                  <div class="direita"></div>
-                </div>
-                
-              </div>
-              <div class="opcoes">
-                <div class="opcao">
-                  <div class="esquerda"></div>
-                  <div class="centro">Extrato</div>
-                  <div class="direita"><img src="Imagens/seta-direita.png" style="width: 12px;"></div>
-                </div>
-                <div class="opcao">
-                  <div class="esquerda"></div>
-                  <div class="centro">Transferência</div>
-                  <div class="direita"><img src="Imagens/seta-direita.png" style="width: 12px;"></div>
-                </div>
-                <div class="opcao">
-                  <div class="esquerda"></div>
-                  <div class="centro">Sair</div>
-                  <div class="direita"><img src="Imagens/seta-direita.png" style="width: 12px;"></div>
-                </div>
-                
-              </div>
+          <div class="carrossel">
+            <div class="slides fade">
+              <img src="../Imagens/tela-incial1.png" alt="slide 1" class="slide-img">
+            </div>
+            <div class="slides fade">
+              <img src="../Imagens/tela-inicial2.png" alt="slide 2" class="slide-img">
+            </div>
+            <div class="slides fade">
+              <img src="../Imagens/tela-inicial3.png" alt="slide 3" class="slide-img">
             </div>
           </div>
         </div>
@@ -76,11 +42,10 @@
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
-          
         </div>
 
         <div class="inserircartao">
-
+           
           <div class="detalhe"></div>
           <div class="inserir">
 
@@ -88,7 +53,15 @@
         </div>
 
         <div class="slot-cartao">
-          <img id="foto" src="" alt="" class="cartao" width="100%">
+          <div class="cartoes-container">
+            <img class="cartao ativo" src="../Imagens/cartao1.png" alt="Cartão 1" id="claudia" onclick="redirecionarComDelay('claudia')">
+            <img class="cartao" src="../Imagens/cartao2.png" alt="Cartão 2" id="tux" onclick="redirecionarComDelay('tux')">
+            <img class="cartao" src="../Imagens/cartao3.png" alt="Cartão 3" id="willian" onclick="redirecionarComDelay('willian')">
+          </div>
+          <div class="botoes-cartao">
+            <button type="button" class="botao-cartao-navegar" onclick="anteriorCartao()">◀</button>
+            <button type="button" class="botao-cartao-navegar" onclick="proximoCartao()">▶</button>
+          </div>
         </div>
 
       </div>
@@ -136,5 +109,5 @@
 
   </div>
 
-  <script src="dados_usuarios.js"></script>
+<script src="paginainicial.js"></script>
 </body>

@@ -4,7 +4,7 @@ html {
     padding: 0;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
-    background: url('Imagens/fundo_caixaeletronico_desfocada_leve.jpg');
+    background: url('../Imagens/fundo_caixaeletronico_desfocada_leve.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: auto;
@@ -128,15 +128,12 @@ h1 {
 }
 
 .botoes-laterais {
-    
-        display: flex;
-        flex-direction: column;
-        gap: 41px;
-        margin-top: 100px;
-        margin-bottom: 40px;
-    }
-    
-
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+    margin-top: 105px;
+    margin-bottom: 40px;
+}
 
 .div-superior {
     display: flex;
@@ -154,67 +151,95 @@ h1 {
     border-color: #000000;
 }
 
-.telasenha{
+h2 {
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.tela-conta {
     width: 100%;
     height: 100%;
-    background: url("Imagens/1151629.jpg");
+    background-color: rgba(0, 0, 0, 0.8);
+    background: url("../Imagens/1151629.jpg");
+}
+
+h3 {
     display: flex;
     justify-content: center;
-    align-items: center;
-  
+    margin: 15px;
+    font-size: 18px;
 }
-.menu{
+
+.menu {
     display: flex;
-    justify-content:center;
-    gap: 45%;
-    
+    justify-content: center;
+    gap: 15%;
     height: 100%;
 }
-.opcoes{
+
+.opcoes {
     display: flex;
-    padding-top: 27px;
+    margin-top: 13px;
     align-items: center;
     flex-direction: column;
     gap: 42px;
-    list-style: none;
 }
-header{
+
+.opcao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    width: 200px;
+    background-color: #e2e2e2;
+    height: 30px;
+    color: #000;
+    border: solid 2px #ffffff;
+    border-radius: 10px;
+}
+
+.esquerda,
+.direita {
+    padding: 5px 10px;
+}
+
+.centro {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+
+header {
     display: flex;
     justify-content: left;
-    align-items:center;
-    background-color: #000;
-    height: 30px;
+    align-items: center;
+    background-color: #fcda43;
+    color: #000;
+    height: 35px;
 }
 
 .slot-cartao {
     position: absolute;
-    width: 300px;
-    height: 250px; /* Altura visível do cartão (parte de fora) */
+    width: 220px;
+    height: 150px;
     margin-top: 210px;
-    margin-left: 780px;
-    overflow: hidden;
-    z-index: 2;
-}
-
-.cartao {
-    width: 150px;
-    cursor: pointer;
-    transition: transform 1s ease-in-out;
-    background-color: transparent;
+    margin-left: 743px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.cartao.inserido {
-    transform: translateY(-70px) scale(1); /* Move o cartão parcialmente para dentro */
-  }
+.cartao {
+    width: 130px;
+    object-fit: cover;
+    object-position: 0px -110px;
 
-.botao-cartao {
-    background-color: transparent;
-    border-color: transparent;
-    cursor: pointer;
 }
+
+
 
 .inserircartao {
     width: 160px;
@@ -263,76 +288,12 @@ header{
     position: absolute;
     margin-top: 10px;
 
-
 }
 
-
-  
-  @keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-  }
-
-
-  .senha{
-    
-    margin-top: -75px;
-    
-    h2 {
-        font-size: 24px;
-        color:  #353434;
-        text-align: center;
-        justify-content: center;
-    align-items: center;
-        margin-bottom: 40px;
-        width: 400px;
-        height: 35px;
-        background-color: #fcda43;
-        border-radius: 20px;
-      }
-
-      input {
-        border-radius: 6px;
-        border: 1px solid #a7a7a7;
-        width: 130px;
-        padding: 10px 12px;
-        font-size: 35px;
-        margin-left: 130px;
-        margin-top: 40px;
-        text-align: center;
-      }
-
-      .amarelo{
-        width:550px ;
-        height:35px ;
-        background-color: #fcda43;
-        margin-top: -45px;
-      }
-    
-      
-      form{
-        margin-left: 70px;
-      }
-  }
-  
-  .cinza{
-    width:550px ;
-    height:45px ;
-    background-color: #3d3d3d;
-    margin-top: -61px;
-
-    p{
-       color: #c0c0c0;
-        font-size: 15px;
-        text-align: center;
-    }
-
-    h3{
-        color: #c0c0c0;
-        font-size: 13px;
-        margin-top: -30px;
-        text-align: center;
-    }
-  }
-
-  
+.depositar{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 315px;
+    position: relative;
+}

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Caixa Eletrônico WHV</title>
   <link href="senha.css" rel="stylesheet">
   <script src="senha.js"></script>
 </head>
@@ -15,11 +15,12 @@
   </div>
   <div class="PAI">
     <div class="barra-superior">
-      <img src="Imagens/logo-whv-bank.png" style="height: 125px; margin-top: 25px;">
+      <img src="../Imagens/logo-whv-bank.png" style="height: 125px; margin-top: 25px;">
       <h1>WHV</h1>
     </div>
     <div class="barra-inferior">
       <div class="div-superior">
+        <div id="mensagem"></div>
         <div class="botoes-laterais">
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
@@ -35,7 +36,7 @@
                 <form>
                     <h2>  Digite sua senha </h2>
                 <div class="digitarsenha">
-                <input type="password" placeholder="" name="senha" id="senha" />
+                <input type="password" placeholder="" name="senha" id="senhainserida" autocomplete="off"/>
                         </div>
                     </div>
                 </form><br>
@@ -61,14 +62,9 @@
         </div>
 
         <div class="slot-cartao">
-          <div class="cartoes-container">
-            <img class="cartao ativo" src="Imagens/cartao1.png" alt="Cartão 1" id="claudia santos" onclick="redirecionarComDelay('claudia')">
-            <img class="cartao" src="Imagens/cartao2.png" alt="Cartão 2" id="tux da silva" onclick="redirecionarComDelay('tux')">
-            <img class="cartao" src="Imagens/cartao3.png" alt="Cartão 3" id="willian reis" onclick="redirecionarComDelay('willian')">
-          </div>
-         
+          <img id="foto" src="" alt="" class="cartao" width="100%">
         </div>
-
+      
       </div>
 
       <div class="sacar-dinheiro">
@@ -103,15 +99,11 @@
          <div class="teclado-lateral">
           <button type="button" style="background-color: #ff0000;" class="button-lateral">CANCELAR</button>
           <button type="button"  onclick="limparCampo()" style="background-color:#fffc00;" class="button-lateral">CORRIGIR</button>
-          <button type="button" style="background-color: #05ff00;" class="button-lateral">CONFIRMAR</button>
+          <button type="button" onclick="verificarSenha()" style="background-color: #05ff00;" class="button-lateral" id="confirmar">CONFIRMAR</button>
           <button type="button" style="background-color: #c0c0c0;" class="button-lateral"></button>
           </div>
+          
       </div>
     </div>
-
-
-
   </div>
-
-<script src="paginainicial.js"></script>
 </body>
