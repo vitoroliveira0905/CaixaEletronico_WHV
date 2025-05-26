@@ -142,12 +142,15 @@ h1 {
 }
 
 .botoes-laterais {
+
     display: flex;
     flex-direction: column;
     gap: 41px;
     margin-top: 105px;
     margin-bottom: 40px;
 }
+
+
 
 .div-superior {
     display: flex;
@@ -165,38 +168,32 @@ h1 {
     border-color: #000000;
 }
 
-h2 {
-    font-size: 22px;
-    margin-left: 10px;
-}
-
-.tela-conta {
+.telavalor {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
     background: url("../Imagens/1151629.jpg");
-}
-
-h3 {
     display: flex;
     justify-content: center;
-    margin: 15px;
-    font-size: 18px;
+    align-items: center;
+
 }
 
 .menu {
     display: flex;
     justify-content: center;
-    gap: 15%;
+    gap: 45%;
+
     height: 100%;
 }
 
 .opcoes {
     display: flex;
-    margin-top: 13px;
+    padding-top: 27px;
     align-items: center;
-    flex-direction: column;
-    gap: 42px;
+    gap: 80px;
+    list-style: none;
+    margin-top: -125px;
+    margin-left: 20px;
 }
 
 .opcao {
@@ -213,26 +210,12 @@ h3 {
     border-radius: 10px;
 }
 
-.esquerda,
-.direita {
-    padding: 5px 10px;
-}
-
-.centro {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    white-space: nowrap;
-}
-
-
 header {
     display: flex;
     justify-content: left;
     align-items: center;
-    background-color: #fcda43;
-    color: #000;
-    height: 35px;
+    background-color: #000;
+    height: 30px;
 }
 
 .slot-cartao {
@@ -252,8 +235,6 @@ header {
     object-position: 0px -110px;
 
 }
-
-
 
 .inserircartao {
     width: 160px;
@@ -302,43 +283,84 @@ header {
     position: absolute;
     margin-top: 10px;
 
-}
-
-.menu-saldo {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 315px;
-    position: relative;
-}
-
-.saldo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.texto-saldo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 80px;
-    background-color: #383838;
-    font-size: 28px;
 
 }
 
-.exibir-saldo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #e2e2e2;
-    width: 100%;
-    height: 50px;
+
+.valor {
+
+    margin-top: -75px;
+    pointer-events: none;
+
+    h2 {
+        font-size: 24px;
+        color: #353434;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+        width: 400px;
+        height: 35px;
+        background-color: #fcda43;
+        border-radius: 20px;
+    }
+
+    input {
+        border-radius: 6px;
+        border: 1px solid #a7a7a7;
+        width: 200px;
+        padding: 10px 12px;
+        font-size: 35px;
+        margin-left: 90px;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .amarelo {
+        width: 550px;
+        height: 35px;
+        background-color: #fcda43;
+        margin-top: -45px;
+    }
+
+
+    form {
+        margin-left: 70px;
+    }
+}
+
+.cinza {
+    width: 550px;
+    height: 45px;
+    background-color: #3d3d3d;
+    margin-top: -61px;
+
+    p {
+        color: #c0c0c0;
+        font-size: 15px;
+        text-align: center;
+    }
+
+    h3 {
+        color: #c0c0c0;
+        font-size: 13px;
+        margin-top: -30px;
+        text-align: center;
+    }
+}
+
+#mensagem {
+    position: fixed;
+    background-color: #ccc;
     color: #000;
-    border: solid 2px #ffffff;
-
-    font-size: 22px;
+    padding: 30px 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    max-width: 400px;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 175px;
+    margin-left: 210px;
 }

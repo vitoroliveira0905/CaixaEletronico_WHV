@@ -46,3 +46,33 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("voltar").onclick = function() {
   window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
+
+  let campoSelecionado = null;
+
+  function selecionarCampo(idCampo) {
+    campoSelecionado = document.getElementById(idCampo);
+    // opcional: indicar visualmente qual campo está ativo
+    document.getElementById("escolhaconta").style.border = "2px solid transparent";
+    document.getElementById("escolhavalor").style.border = "2px solid transparent";
+    
+    campoSelecionado.style.border = "2px solid yellow"; // destaque o campo selecionado
+  }
+
+  function digitar(caracter) {
+    if (campoSelecionado && campoSelecionado.value.length < 12) {
+      campoSelecionado.value += caracter;
+    }
+  }
+
+  function limparCampo() {
+    if (campoSelecionado) {
+      campoSelecionado.value = '';
+    }
+  }
+  
+  function redirecionarConfirmacao() {
+    let valor = document.getElementById("escolhavalor")
+    window.location.href = `../confirmacao/confirmacaotransf.html?usuario=${encodeURIComponent(usuario)}&valor=${valor}`;
+  }
+
+  document.getElementById("confirmar").addEventListener("click", () => redirecionarConfirmacao());

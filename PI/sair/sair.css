@@ -67,6 +67,11 @@ h1 {
     cursor: pointer;
     width: 67px;
     height: 35px;
+    transition: transform 0.1s ease;
+}
+
+.button-numbers:hover {
+    transform: scale(0.95);
 }
 
 .teclado-numerico {
@@ -96,6 +101,11 @@ h1 {
     cursor: pointer;
     width: 82px;
     height: 31px;
+    transition: transform 0.1s ease;
+}
+
+.button-lateral:hover {
+    transform: scale(0.95);
 }
 
 .botao-superior {
@@ -108,6 +118,11 @@ h1 {
     cursor: pointer;
     width: 60px;
     height: 35px;
+    transition: transform 0.1s ease;
+}
+
+.botao-superior:hover {
+    transform: scale(0.95);
 }
 
 .botoes-laterais {
@@ -202,28 +217,28 @@ header {
     color: #000;
     height: 35px;
 }
-
 .slot-cartao {
     position: absolute;
     width: 220px;
-    height: 150px;
+    height: 240px;
     margin-top: 210px;
     margin-left: 743px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden; 
 }
 
 .cartao {
     width: 130px;
-    object-fit: cover;
-    object-position: 0px -110px;
+    position: relative;
+    transform: translateY(-110px); 
     transition: transform 0.8s ease-in-out;
+    cursor: pointer;
 }
 
 .cartao.retirando {
-    transform: translateY(-160px);
-    opacity: 0;
+    transform: translateY(0);
 }
 
 .inserircartao {
@@ -274,18 +289,3 @@ header {
 .sair {
     width: 550px;
 }
-
-.retirado {
-    animation: retirarCartao 1s forwards;
-  }
-  
-  @keyframes retirarCartao {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(200px);
-      opacity: 0;
-    }
-  }

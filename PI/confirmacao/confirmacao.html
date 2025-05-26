@@ -1,56 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caixa Eletrônico WHV - Retire o Cartão</title>
-    <link href="sair.css" rel="stylesheet">
-    <script src="sair.js" defer></script>
+    <title>Caixa Eletrônico WHV</title>
+    <link href="confirmacao.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <div class="background"></div>
+    <div class="background">
+
+    </div>
     <div class="PAI">
         <div class="barra-superior">
             <img src="../Imagens/logo-whv-bank.png" style="height: 125px; margin-top: 25px;">
             <h1>WHV</h1>
         </div>
-
         <div class="barra-inferior">
             <div class="div-superior">
                 <div class="botoes-laterais">
                     <button type="button" class="botao-superior"></button>
                     <button type="button" class="botao-superior"></button>
-                    <button type="button" class="botao-superior" id="voltar"></button>
-                </div>
+                    <button type="button" class="botao-superior" id="cancel"></button>
 
+                </div>
                 <div class="tela">
                     <div class="tela-conta">
-                        <header></header>
-                        <img src="../Imagens/sair.png" alt="Retire seu cartão" class="sair" >
+                        <header>
+
+                        </header>
+                        <div class="valor">
+
+                            <div class="container">
+                                <h1>Confirmação de Saque</h1>
+                                <p>Você deseja sacar o valor de:</p>
+                                <h2 id="valorSaque">R$ 0,00</h2>
+                            </div>
+                            
+
+                            <div class="opcoes">
+                                <div class="opcao">
+                                    <div class="esquerda"><img src="../Imagens/seta-esquerda.png" style="width: 12px;"></div>
+                                    <div class="centro">cancelar</div>
+                                    <div class="direita"></div>
+                                </div>
+                                
+                                <div class="opcao">
+                                    <div class="esquerda"></div>
+                                    <div class="centro">confirmar</div>
+                                    <div class="direita"><img src="../Imagens/seta-direita.png" style="width: 12px;"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
                     </div>
                 </div>
-
                 <div class="botoes-laterais">
                     <button type="button" class="botao-superior"></button>
                     <button type="button" class="botao-superior"></button>
-                    <button type="button" class="botao-superior"></button>
+                    <button type="button" class="botao-superior" id="confirmar"></button>
+
                 </div>
 
                 <div class="inserircartao">
+
                     <div class="detalhe"></div>
-                    <div class="inserir"></div>
+                    <div class="inserir">
+
+                    </div>
                 </div>
 
                 <div class="slot-cartao">
-                    <img id="foto" src="" alt="Cartão" class="cartao " onclick="redirecionarComDelay()">
+                    <img id="foto" src="" alt="" class="cartao" width="100%">
                 </div>
+
             </div>
 
             <div class="sacar-dinheiro">
-                <div class="dinheiro"></div>
+                <div class="dinheiro">
+
+                </div>
             </div>
+
 
             <div class="teclado-pai">
                 <div class="teclado-numerico">
@@ -76,14 +109,17 @@
                     </div>
                 </div>
                 <div class="teclado-lateral">
-                    <button type="button" style="background-color: #ff0000;" class="button-lateral">CANCELAR</button>
+                    <button type="button" style="background-color: #ff0000;" class="button-lateral" id="cancela">CANCELAR</button>
                     <button type="button" style="background-color:#fffc00;" class="button-lateral">CORRIGIR</button>
-                    <button type="button" style="background-color: #05ff00;" class="button-lateral">CONFIRMAR</button>
+                    <button type="button" style="background-color: #05ff00;" class="button-lateral" id="confirm">CONFIRMAR</button>
                     <button type="button" style="background-color: #c0c0c0;" class="button-lateral"></button>
                 </div>
             </div>
         </div>
-    </div>
-</body>
 
-</html>
+
+
+    </div>
+
+    <script src="confirmacao.js"></script>
+</body>

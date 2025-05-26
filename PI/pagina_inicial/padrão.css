@@ -32,9 +32,7 @@ html {
   align-items: center;
   padding-left: 20px;
 }
-.botao-superior:hover{
-  transform: scale(0.95);
-}
+
 .barra-inferior {
   background-color: rgb(170, 170, 170);
   color: white;
@@ -74,11 +72,13 @@ h1 {
   cursor: pointer;
   width: 67px;
   height: 35px;
+  transition: transform 0.1s ease;
 }
 
-.button-numbers:hover{
+.button-numbers:hover {
   transform: scale(0.95);
 }
+
 .teclado-numerico {
   display: flex;
   flex-direction: column;
@@ -114,9 +114,10 @@ h1 {
   cursor: pointer;
   width: 82px;
   height: 31px;
+  transition: transform 0.1s ease;
 }
 
-.button-lateral:hover{
+.button-lateral:hover {
   transform: scale(0.95);
 }
 
@@ -133,7 +134,11 @@ h1 {
   width: 60px;
   height: 35px;
   border-color: #494949;
+  transition: transform 0.1s ease;
+}
 
+.botao-superior:hover {
+  transform: scale(0.95);
 }
 
 .botoes-laterais {

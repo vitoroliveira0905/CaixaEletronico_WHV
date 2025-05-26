@@ -43,23 +43,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+  const valor = getParametro("valor");
+
+  const valorFormatado = parseFloat(valor).toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+  document.getElementById("valorSaque").textContent = valorFormatado;
 
 
-function redirecionarConfirmacao(valor) {
-  window.location.href = `../confirmacao/confirmacao.html?usuario=${encodeURIComponent(usuario)}&valor=${valor}`;
-}
+  // Botão confirmar
+  document.getElementById("confirmar").addEventListener("click", () => {
+    // Aqui você pode redirecionar para uma tela de sucesso ou finalizar o saque
+    alert(`Saque de ${valorFormatado} confirmado!`);
+    // Exemplo de redirecionamento:
+    // window.location.href = `sucesso.html?usuario=${usuario}&valor=${valor}`;
+  });
 
-function redirecionarOutroValor() {
-  window.location.href = `../outrovalor/outrovalor.html?usuario=${encodeURIComponent(usuario)}`;
-}
+  // Botão confirmar2
+  document.getElementById("confirm").addEventListener("click", () => {
+    alert(`Saque de ${valorFormatado} confirmado!`);
+  });
 
-document.getElementById("saque20").addEventListener("click", () => redirecionarConfirmacao(20));
-document.getElementById("saque50").addEventListener("click", () => redirecionarConfirmacao(50));
-document.getElementById("saque100").addEventListener("click", () => redirecionarConfirmacao(100));
-document.getElementById("saque200").addEventListener("click", () => redirecionarConfirmacao(200));
-document.getElementById("outrovalor").addEventListener("click", redirecionarOutroValor);
-
-
-document.getElementById("voltar").onclick = function() {
-  window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
-  };
+  document.getElementById("cancel").onclick = function() {
+    window.location.href = `../saque/saque.html?usuario=${encodeURIComponent(usuario)}`;
+    };
+  
+  document.getElementById("cancela").onclick = function() {
+    window.location.href = `../saque/saque.html?usuario=${encodeURIComponent(usuario)}`;
+    };
+  

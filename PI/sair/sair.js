@@ -1,40 +1,55 @@
-let indiceCartao = 0;
-const cartoes = document.querySelectorAll(".cartao");
+//dados dos usuários
+let dadosUsuarios = {   
+  claudia: {
+    nome: "Cláudia Santos",
+    desc: "! Bem-vinda de volta!",
+    imagem: "../Imagens/cartao1.png",
+    senha: "1234",
+    saldo: "1400"
+  },
+  tux: {
+    nome: "Tux da Silva",
+    desc: "! Preparado para novas aventuras bancárias?",
+    imagem: "../Imagens/cartao2.png",
+    senha: "4321",
+    saldo: "1500"
+  },
+  willian: {
+    nome: "Willian Reis",
+    desc: "! Sua conta está atualizada.",
+    imagem: "../Imagens/cartao3.png",
+    senha: "2025",
+    saldo: "1600"
+  },
+};
 
-function mostrarCartao(indice) {
-  cartoes.forEach(c => {
-    c.classList.remove("ativo", "inserido", "bloqueado", "retirado");
-  });
-  cartoes[indice].classList.add("ativo");
+function getParametro(nome) {
+  const url = new URL(window.location.href);
+  return url.searchParams.get(nome);
 }
 
-function proximoCartao() {
-  indiceCartao = (indiceCartao + 1) % cartoes.length;
-  mostrarCartao(indiceCartao);
+const usuario = getParametro("usuario");
+const dados = dadosUsuarios[usuario];
+
+console.log(usuario)
+console.log(dados)
+
+document.addEventListener("DOMContentLoaded", () => {
+let imagem = document.getElementById("foto");
+
+if (imagem) {
+  imagem.src = dados.imagem;
+  imagem.alt = dados.nome;
+  imagem.style.display = "block";
 }
+});
 
-function anteriorCartao() {
-  indiceCartao = (indiceCartao - 1 + cartoes.length) % cartoes.length;
-  mostrarCartao(indiceCartao);
-}
-
-function redirecionarComDelay(usuario) {
-  const cartaoAtual = cartoes[indiceCartao];
-  cartaoAtual.classList.add("bloqueado");  // Impede mais interações
-  cartaoAtual.classList.add("retirado");   // Animação de retirada
-
-  // 🔒 Desativa botões de navegação se existirem
-  // const botoesCarrossel = document.querySelectorAll(".botao-cartao-navegar");
-  // botoesCarrossel.forEach(botao => botao.disabled = true);
+function redirecionarComDelay() {
+  const cartao = document.querySelector(".cartao");
+  cartao.classList.add("retirando"); // Faz o cartão descer
 
   setTimeout(() => {
-    // Redireciona para a página da senha com o nome do usuário
-    window.location.href = `../pagina_inicial/paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
-  }, 1000);
+    window.location.href = "../pagina_inicial/paginainicial.html";
+  }, 2000);
 }
 
-// Exemplo de execução automática ao carregar a página
-document.addEventListener("DOMContentLoaded", () => {
-  const usuario = "usuarioExemplo"; // Substitua pelo valor real
-  redirecionarComDelay(usuario);
-});

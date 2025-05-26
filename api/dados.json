@@ -1,0 +1,23 @@
+{
+    "claudia": {
+        "id": "1000",
+        "nome": "Cláudia Santos",
+        "desc": "! Bem-vinda de volta!",
+        "imagem": "../Imagens/cartao1.png",
+        "senha": "1234"
+    },
+    "tux": {
+        "id": "2000",
+        "nome": "Tux da Silva",
+        "desc": "! Preparado para novas aventuras bancárias?",
+        "imagem": "../Imagens/cartao2.png",
+        "senha": "4321"
+    },
+    "willian": {
+        "id": "3000",
+        "nome": "Willian Reis",
+        "desc": "! Sua conta está atualizada.",
+        "imagem": "../Imagens/cartao3.png",
+        "senha": "2025"
+    }
+}

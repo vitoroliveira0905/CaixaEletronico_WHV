@@ -74,6 +74,11 @@ h1 {
     cursor: pointer;
     width: 67px;
     height: 35px;
+    transition: transform 0.1s ease;
+}
+
+.button-numbers:hover {
+    transform: scale(0.95);
 }
 
 .teclado-numerico {
@@ -109,6 +114,11 @@ h1 {
     cursor: pointer;
     width: 82px;
     height: 31px;
+    transition: transform 0.1s ease;
+}
+
+.button-lateral:hover {
+    transform: scale(0.95);
 }
 
 .botao-superior {
@@ -124,7 +134,11 @@ h1 {
     width: 60px;
     height: 35px;
     border-color: #494949;
+    transition: transform 0.1s ease;
+}
 
+.botao-superior:hover {
+    transform: scale(0.95);
 }
 
 .botoes-laterais {
@@ -290,7 +304,7 @@ header {
 
 }
 
-.depositar{
+.depositar {
     display: flex;
     flex-direction: column;
     width: 100%;
