@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caixa Eletrônico WHV</title>
   <link href="senha.css" rel="stylesheet">
-  <script src="senha.js"></script>
 </head>
 
 <body>
@@ -25,27 +24,27 @@
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
-        
+
         </div>
         <div class="tela">
-         
-            
+
+
           <div class="telasenha">
             <div class="senha">
-                <div class="amarelo"></div>
-                <form>
-                    <h2>  Digite sua senha </h2>
+              <div class="amarelo"></div>
+              <form>
+                <h2> Digite sua senha </h2>
                 <div class="digitarsenha">
-                <input type="password" placeholder="" name="senha" id="senhainserida" autocomplete="off"/>
-                        </div>
-                    </div>
-                </form><br>
-               
+                  <input type="password" placeholder="" name="senha" id="senhainserida" autocomplete="off" />
+                </div>
             </div>
-            <div class="cinza"> 
-                <p>Dica de Segurança</p><br>
-                <h3>Nunca revele sua senha para ninguém!</h3>
-            </div>
+            </form><br>
+
+          </div>
+          <div class="cinza">
+            <p>Dica de Segurança</p><br>
+            <h3>Nunca revele sua senha para ninguém!</h3>
+          </div>
         </div>
         <div class="botoes-laterais">
           <button type="button" class="botao-superior"></button>
@@ -54,7 +53,7 @@
         </div>
 
         <div class="inserircartao">
-           
+
           <div class="detalhe"></div>
           <div class="inserir">
 
@@ -64,7 +63,7 @@
         <div class="slot-cartao">
           <img id="foto" src="" alt="" class="cartao" width="100%">
         </div>
-      
+
       </div>
 
       <div class="sacar-dinheiro">
@@ -95,15 +94,19 @@
             <button type="button" class="button-numbers" onclick="digitar('0')">0</button>
             <button type="button" class="button-numbers"></button>
           </div>
-          </div>
-         <div class="teclado-lateral">
+        </div>
+        <div class="teclado-lateral">
           <button type="button" style="background-color: #ff0000;" class="button-lateral">CANCELAR</button>
-          <button type="button"  onclick="limparCampo()" style="background-color:#fffc00;" class="button-lateral">CORRIGIR</button>
-          <button type="button" onclick="verificarSenha()" style="background-color: #05ff00;" class="button-lateral" id="confirmar">CONFIRMAR</button>
+          <button type="button" onclick="limparCampo()" style="background-color:#fffc00;"
+            class="button-lateral">CORRIGIR</button>
+          <button type="button" onclick="verificarSenha()" style="background-color: #05ff00;" class="button-lateral"
+            id="confirmar">CONFIRMAR</button>
           <button type="button" style="background-color: #c0c0c0;" class="button-lateral"></button>
-          </div>
-          
+        </div>
+
       </div>
     </div>
   </div>
+
+  <script type="module" src="senha.js"></script>
 </body>

@@ -1,50 +1,30 @@
-//dados dos usuários
-  let dadosUsuarios = {   
-    claudia: {
-      nome: "Cláudia Santos",
-      desc: "! Bem-vinda de volta!",
-      imagem: "../Imagens/cartao1.png",
-      senha: "1234",
-      saldo: "1400"
-    },
-    tux: {
-      nome: "Tux da Silva",
-      desc: "! Preparado para novas aventuras bancárias?",
-      imagem: "../Imagens/cartao2.png",
-      senha: "4321",
-      saldo: "1500"
-    },
-    willian: {
-      nome: "Willian Reis",
-      desc: "! Sua conta está atualizada.",
-      imagem: "../Imagens/cartao3.png",
-      senha: "2025",
-      saldo: "1600"
-    },
-  };
+import { dadosUsuarios, carregarDadosUsuarios } from '../dadosUsuarios.js';
 
-  function getParametro(nome) {
-    const url = new URL(window.location.href);
-    return url.searchParams.get(nome);
+function getParametro(nome) {
+  const url = new URL(window.location.href);
+  return url.searchParams.get(nome);
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const usuario = getParametro("usuario");
+  await carregarDadosUsuarios();
+  const dados = dadosUsuarios[usuario];
+
+  if (!dados) {
+    alert("Usuário não encontrado.");
+    return;
   }
-  
-const usuario = getParametro("usuario");
-const dados = dadosUsuarios[usuario];
 
-console.log(usuario)
-console.log(dados)
-
-document.addEventListener("DOMContentLoaded", () => {
   let imagem = document.getElementById("foto");
   if (imagem) {
     imagem.src = dados.imagem;
     imagem.alt = dados.nome;
     imagem.style.display = "block";
   }
-});
-document.getElementById("saldo").innerText = dados.saldo
 
+  document.getElementById("saldo").innerText = dados.saldo;
 
-document.getElementById("voltar").onclick = function() {
-  window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
+  document.getElementById("voltar").onclick = function() {
+    window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
+});

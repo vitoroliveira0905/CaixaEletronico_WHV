@@ -1,8 +1,8 @@
 // dadosUsuarios.js
 
-let dadosUsuarios = {}; // Objeto compartilhado
+export let dadosUsuarios = {}; // Objeto compartilhado
 
-async function carregarDadosUsuarios() {
+export async function carregarDadosUsuarios() {
     try {
         const response = await fetch('http://localhost:3000/api/dados');
         if (!response.ok) {
@@ -13,8 +13,3 @@ async function carregarDadosUsuarios() {
         console.error('Erro ao carregar os dados dos usuários:', error);
     }
 }
-
-module.exports = {
-    dadosUsuarios,
-    carregarDadosUsuarios
-};

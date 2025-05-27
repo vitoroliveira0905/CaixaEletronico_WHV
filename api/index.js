@@ -11,6 +11,16 @@ function getDados() {
     return JSON.parse(dados);
 }
 
+app.use((req, res, next) => {
+    const allowedOrigins = ['http://127.0.0.1:5500', 'http://localhost:5500'];
+    if (allowedOrigins.includes(req.headers.origin)) {
+        res.header('Access-Control-Allow-Origin', req.headers.origin);
+    }
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
 app.get('/api/dados', (req, res) => {
     const dados = getDados();
     res.json(dados);

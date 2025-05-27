@@ -1,94 +1,83 @@
-  // Dados dos usuários
-  let dadosUsuarios = {   
-    claudia: {
-      nome: "Cláudia Santos",
-      desc: "! Bem-vinda de volta!",
-      imagem: "../Imagens/cartao1.png",
-      senha: "1234"
-    },
-    tux: {
-      nome: "Tux da Silva",
-      desc: "! Preparado para novas aventuras bancárias?",
-      imagem: "../Imagens/cartao2.png",
-      senha: "4321"
-    },
-    willian: {
-      nome: "Willian Reis",
-      desc: "! Sua conta está atualizada.",
-      imagem: "../Imagens/cartao3.png",
-      senha: "2025"
+import { dadosUsuarios, carregarDadosUsuarios } from '../dadosUsuarios.js';
+
+let usuario = null;
+let dados = null;
+let senhaCorreta = null;
+let tentativas = 0;
+const maxTentativas = 3;
+
+function getParametro(nome) {
+  const url = new URL(window.location.href);
+  return url.searchParams.get(nome);
+}
+
+// Funções globais acessam as variáveis acima
+window.digitar = function(caracter) {
+  const input = document.getElementById("senhainserida");
+  if (input && input.value.length < 4) {
+    input.value += caracter;
+  }
+};
+
+window.limparCampo = function() {
+  const input = document.getElementById('senhainserida');
+  if (input) input.value = '';
+};
+
+window.verificarSenha = function() {
+  const inputSenha = document.getElementById("senhainserida");
+  const senhaInserida = inputSenha ? inputSenha.value : "";
+  const mensagem = document.getElementById("mensagem");
+
+  if (!senhaCorreta) {
+    mensagem.textContent = "Erro ao carregar dados do usuário.";
+    mensagem.style.display = "block";
+    return;
+  }
+
+  if (senhaInserida === senhaCorreta) {
+    window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
+  } else {
+    tentativas++;
+    if (tentativas >= maxTentativas) {
+      window.location.href = "../pagina_inicial/paginainicial.html?bloqueado=true";
+    } else {
+      mensagem.textContent = `Senha incorreta. Tentativa ${tentativas} de ${maxTentativas}.`;
+      mensagem.style.display = "block";
+      setTimeout(() => {
+        mensagem.style.display = "none";
+        if (inputSenha) inputSenha.value = "";
+      }, 3000);
     }
-  };
-  
-const usuario = getParametro("usuario");
-const dados = dadosUsuarios[usuario];
+  }
+};
 
-console.log(usuario)
-console.log(dados)
+document.addEventListener("DOMContentLoaded", async () => {
+  usuario = getParametro("usuario");
+  await carregarDadosUsuarios();
+  dados = dadosUsuarios[usuario];
 
-document.addEventListener("DOMContentLoaded", () => {
-  let imagem = document.getElementById("foto");
+  const mensagem = document.getElementById("mensagem");
+
+  if (!dados) {
+    mensagem.textContent = "Usuário não encontrado.";
+    mensagem.style.display = "block";
+    return;
+  }
+
+  senhaCorreta = dados.senha;
+
+  const imagem = document.getElementById("foto");
   if (imagem) {
     imagem.src = dados.imagem;
     imagem.alt = dados.nome;
     imagem.style.display = "block";
   }
+
+  // Mensagem de bloqueio, se necessário
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("bloqueado") === "true") {
+    mensagem.textContent = "Conta bloqueada por excesso de tentativas.";
+    mensagem.style.display = "block";
+  }
 });
-
-function digitar(caracter) {
-    var input = document.getElementById("senhainserida");
-    if(input.value.length < 4){
-      input.value += caracter;
-    }
-  }
-
-  function limparCampo() {
-    document.getElementById('senhainserida').value = '';
-  }
-
-  function getParametro(nome) {
-    const url = new URL(window.location.href);
-    return url.searchParams.get(nome);
-  }
-  
-
-  const senhaCorreta = dados.senha;
-  let tentativas = 0;
-  const maxTentativas = 3;
-
-  function verificarSenha() {
-  
-    const inputSenha = document.getElementById("senhainserida");
-    const senhaInserida = inputSenha.value;
-    const mensagem = document.getElementById("mensagem");
-
-
-    if (senhaInserida === senhaCorreta) {
-      window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
-    } else {
-      tentativas++;   
-        if (tentativas >= maxTentativas) {
-          window.location.href = "../pagina_inicial/paginainicial.html?bloqueado=true";
-        } else {
-          mensagem.textContent = `Senha incorreta. Tentativa ${tentativas} de ${maxTentativas}.`;
-          mensagem.style.display = "block";
-          
-          setTimeout(() => {
-            mensagem.style.display = "none";
-            inputSenha.value = "";
-          }, 3000);
-
-        }
-    }
-  }
-
-  window.onload = function () {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get("bloqueado") === "true") {
-      const mensagem = document.getElementById("mensagem");
-      mensagem.textContent = "Conta bloqueada por excesso de tentativas.";
-      mensagem.style.display = "block";
-    }
-  }
-
-  
