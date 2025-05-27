@@ -194,11 +194,10 @@ h3 {
 
 .opcoes {
     display: flex;
-    margin-top: 3px;
+    justify-content: center;
     align-items: center;
-    gap: 42px;
-    margin-left: 40px;
-
+    gap: 15%;
+    align-items: center;
 }
 
 .opcao {
@@ -316,7 +315,8 @@ header {
 
 .container {
     max-width: 300px;
-    margin: 20px auto;
+    height: 200px;
+    margin: 8px auto;
     padding: 0px;
     background-color: #1b1b1b;
     border-radius: 12px;
@@ -324,22 +324,21 @@ header {
     color: #ffffff;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .container h1 {
+}
+
+.container h1 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #fcda43;
-  }
-  
-  .container h2 {
+}
+
+.container h2 {
     margin: 20px 0;
     font-size: 28px;
     color: #ffffff;
-  }
-  
-  .container p {
+}
+
+.container p {
     font-size: 18px;
     color: #cccccc;
-  }
-  
+}

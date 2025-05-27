@@ -184,6 +184,23 @@ h3 {
     font-size: 18px;
 }
 
+.extrato{
+    width: 100%;
+    height: 180px;
+    overflow: auto;
+}
+
+.tabela-extrato {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+.tabela-extrato th,
+.tabela-extrato td {
+    border: 1px solid #494949;
+    padding: 8px;
+    text-align: center;
+}
 .menu {
     display: flex;
     justify-content: center;
@@ -228,7 +245,7 @@ h3 {
 
 header {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     align-items: center;
     background-color: #fcda43;
     color: #000;

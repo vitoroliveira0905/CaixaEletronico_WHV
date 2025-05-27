@@ -49,7 +49,18 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
 
   window.redirecionarConfirmacao = function() {
+    let conta = document.getElementById("escolhaconta").value;
     let valor = document.getElementById("escolhavalor").value;
+    if (conta == "") {
+      alert("Insira uma conta");
+      return false;
+    }
+
+    else if (valor == "") {
+      alert("Insira uma valor");
+      return false;
+    }
+   
     window.location.href = `../confirmacao/confirmacaotransf.html?usuario=${encodeURIComponent(usuario)}&valor=${valor}`;
   };
 

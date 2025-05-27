@@ -192,7 +192,7 @@ h1 {
     align-items: center;
     gap: 80px;
     list-style: none;
-    margin-top: -125px;
+    margin-top: -126px;
     margin-left: 20px;
 }
 
@@ -363,4 +363,11 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     margin-top: 175px;
     margin-left: 210px;
+}
+
+.info {
+    color: #fcda43;
+    margin-top: 30px;
+    margin-left: 100px;
+
 }

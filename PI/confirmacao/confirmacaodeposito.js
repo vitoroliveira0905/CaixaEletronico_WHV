@@ -23,31 +23,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
-  // Limpa o valor para conversão
-  const valorNumerico = parseFloat(valor.replace("R$", "").replace(",", ".").trim());
-
-  const valorFormatado = valorNumerico.toLocaleString("pt-BR", {
+  const valorFormatado = parseFloat(valor).toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL"
   });
-
-  document.getElementById("valorSaque").textContent = valorFormatado;
+  document.getElementById("escolhavalor").textContent = valorFormatado;
 
   // Botão confirmar
   document.getElementById("confirmar").addEventListener("click", () => {
-    window.location.href = `../saque/sacou.html?usuario=${encodeURIComponent(usuario)}&valor=${encodeURIComponent(valorFormatado)}`;
-  });
-
-  // Botão confirmar2
-  document.getElementById("confirm").addEventListener("click", () => {
-    window.location.href = `../saque/sacou.html?usuario=${encodeURIComponent(usuario)}&valor=${encodeURIComponent(valorFormatado)}`;
+    alert(`Deposito de ${valorFormatado} confirmada!`);
+    // window.location.href = `sucesso.html?usuario=${usuario}&valor=${valor}`;
   });
 
   document.getElementById("cancel").onclick = function() {
-    window.location.href = `../saque/saque.html?usuario=${encodeURIComponent(usuario)}`;
+    window.location.href = `../valordeposito/valordeposito.html?usuario=${encodeURIComponent(usuario)}`;
   };
 
   document.getElementById("cancela").onclick = function() {
-    window.location.href = `../saque/saque.html?usuario=${encodeURIComponent(usuario)}`;
+    window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
 });

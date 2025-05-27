@@ -21,7 +21,7 @@
         <div class="barra-inferior">
             <div class="div-superior">
                 <div class="botoes-laterais">
-                    <button type="button" class="botao-superior"></button>
+                    <button type="button" class="botao-superior" ></button>
                     <button type="button" class="botao-superior"></button>
                     <button type="button" class="botao-superior" id="voltar"></button>
 
@@ -29,15 +29,27 @@
                 <div class="tela">
                     <div class="tela-conta">
                         <header>
-
+                          
                         </header>
-                        <div class="depositar">
                             
-
-                            <div class="opcao" style="margin: 82px 0 0 20px;">
+                        <h4>Digite a conta</h4>
+                        <div class="conta">
+                            <h2>Conta</h2>
+                            <input type="text" placeholder="" name="conta" id="escolhaconta" autocomplete="off"  />
+                            
+                            
+                        </div>
+        
+                        <div class="depositar">
+                            <div class="opcao">
                                 <div class="esquerda"><img src="../Imagens/seta-esquerda.png " style="width: 12px;"></div>
                                 <div class="centro">Voltar</div>
                                 <div class="direita"></div>
+                            </div>
+                            <div class="opcao">
+                                <div class="esquerda"></div>
+                                <div class="centro">Confirmar</div>
+                                <div class="direita"><img src="../Imagens/seta-direita.png " style="width: 12px;"></div>
                             </div>
                         </div>
                     </div>
@@ -45,7 +57,7 @@
                 <div class="botoes-laterais">
                     <button type="button" class="botao-superior"></button>
                     <button type="button" class="botao-superior"></button>
-                    <button type="button" class="botao-superior"></button>
+                    <button type="button" class="botao-superior" id="confirmar"></button>
 
                 </div>
 
@@ -73,30 +85,30 @@
             <div class="teclado-pai">
                 <div class="teclado-numerico">
                     <div class="teclado-linha">
-                        <button type="button" class="button-numbers">1</button>
-                        <button type="button" class="button-numbers">2</button>
-                        <button type="button" class="button-numbers">3</button>
+                        <button type="button" class="button-numbers" onclick="digitar('1')">1</button>
+            <button type="button" class="button-numbers" onclick="digitar('2')">2</button>
+            <button type="button" class="button-numbers" onclick="digitar('3')">3</button>
                     </div>
                     <div class="teclado-linha">
-                        <button type="button" class="button-numbers">4</button>
-                        <button type="button" class="button-numbers">5</button>
-                        <button type="button" class="button-numbers">6</button>
+                        <button type="button" class="button-numbers" onclick="digitar('4')">4</button>
+                        <button type="button" class="button-numbers" onclick="digitar('5')">5</button>
+                        <button type="button" class="button-numbers" onclick="digitar('6')">6</button>
                     </div>
                     <div class="teclado-linha">
-                        <button type="button" class="button-numbers">7</button>
-                        <button type="button" class="button-numbers">8</button>
-                        <button type="button" class="button-numbers">9</button>
+                        <button type="button" class="button-numbers" onclick="digitar('7')">7</button>
+                        <button type="button" class="button-numbers" onclick="digitar('8')">8</button>
+                        <button type="button" class="button-numbers" onclick="digitar('9')">9</button>
                     </div>
                     <div class="teclado-linha">
                         <button type="button" class="button-numbers"></button>
-                        <button type="button" class="button-numbers">0</button>
+                        <button type="button" class="button-numbers" onclick="digitar('0')">0</button>
                         <button type="button" class="button-numbers"></button>
                     </div>
                 </div>
                 <div class="teclado-lateral">
                     <button type="button" style="background-color: #ff0000;" class="button-lateral">CANCELAR</button>
-                    <button type="button" style="background-color:#fffc00;" class="button-lateral">CORRIGIR</button>
-                    <button type="button" style="background-color: #05ff00;" class="button-lateral">CONFIRMAR</button>
+                    <button type="button"  onclick="limparCampo()" style="background-color:#fffc00;" class="button-lateral">CORRIGIR</button>
+                    <button type="button" onclick="" style="background-color: #05ff00;" class="button-lateral" id="confirmar">CONFIRMAR</button>
                     <button type="button" style="background-color: #c0c0c0;" class="button-lateral"></button>
                 </div>
             </div>

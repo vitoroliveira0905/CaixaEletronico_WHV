@@ -25,31 +25,32 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   document.getElementById("voltar").onclick = function() {
-    window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
+    window.location.href = `../depositar/depositar.html?usuario=${encodeURIComponent(usuario)}`;
   };
 
   // Funções para seleção e digitação
   window.digitar = function(caracter) {
-    const input = document.getElementById("escolhaconta");
+    const input = document.getElementById('escolhavalor');
     if (input && input.value.length < 4) {
       input.value += caracter;
     }
   };
   window.limparCampo = function() {
-    const input = document.getElementById("escolhaconta");
+    const input = document.getElementById('escolhavalor');
     if (input) input.value = '';
   };
-
-
-  document.getElementById("confirmar").onclick = function() {
-    let conta = document.getElementById("escolhaconta").value;
-    if (conta == "" ) {
-      alert("Insira uma conta");
+  
+  window.redirecionarConfirmacao = function() {
+    let valor = document.getElementById("escolhavalor").value;
+    if (valor == "" ) {
+      alert("Insira um valor");
       return false;
     }
-    window.location.href = `../valordeposito/valordeposito.html?usuario=${encodeURIComponent(usuario)}`;
+  
+    window.location.href = `../confirmacao/confirmacaodeposito.html?usuario=${encodeURIComponent(usuario)}&valor=${valor}`;
   };
 
+  document.getElementById("confirmar").addEventListener("click", () => window.redirecionarConfirmacao());
 
   
 });

@@ -22,6 +22,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
+  // Preencher tabela de extrato
+  const extrato = dados.extrato || [];
+  const tbody = document.querySelector(".tabela-extrato tbody");
+  tbody.innerHTML = ""; // Limpa conteúdo anterior
+
+  extrato.forEach(item => {
+    const tr = document.createElement("tr");
+    const tdData = document.createElement("td");
+    const tdDesc = document.createElement("td");
+    const tdValor = document.createElement("td");
+
+    tdData.textContent = item.data;
+    tdDesc.textContent = item.descricao;
+    tdValor.textContent = (item.valor < 0 ? "- " : "+ ") + "R$" + Math.abs(item.valor).toFixed(2);
+
+    tr.appendChild(tdData);
+    tr.appendChild(tdDesc);
+    tr.appendChild(tdValor);
+    tbody.appendChild(tr);
+  });
+
   document.getElementById("voltar").onclick = function() {
     window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
