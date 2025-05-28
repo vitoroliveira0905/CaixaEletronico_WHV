@@ -24,40 +24,39 @@
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior"></button>
           <button type="button" class="botao-superior" id="btn2-cancelar"></button>
-        
+
         </div>
         <div class="tela">
-         
-            
+
+
           <div class="telavalor">
             <div class="valor">
-                <div class="amarelo"></div>
-                    <form onsubmit="return enviarValor()">
-                        <h2>Digite o valor</h2>
-                        <div class="digitarvalor">
-                          <input id="valorinserido" value="R$ 0,00" readonly />
-                        </div>
-                    </form><br>
+              <div class="amarelo"></div>
+              <form onsubmit="return enviarValor()">
+                <h2>Digite o valor</h2>
+                <div class="digitarvalor">
+                  <input id="valorinserido" value="R$ 0,00" readonly />
                 </div>
-                
+              </form><br>
             </div>
-            <div class="opcoes">
-                <div class="opcao">
-                    <div class="esquerda"><img src="../Imagens/seta-esquerda.png" style="width: 12px;"></div>
-                    <div class="centro">cancelar</div>
-                    <div class="direita"></div>
-                </div>
-                
-                <div class="opcao">
-                    <div class="esquerda"></div>
-                    <div class="centro">confirmar</div>
-                    <div class="direita"><img src="../Imagens/seta-direita.png" style="width: 12px;"></div>
-                </div>
+
+          </div>
+          <div class="opcoes">
+            <div class="opcao">
+              <div class="esquerda"><img src="../Imagens/seta-esquerda.png " style="width: 12px;"></div>
+              <div class="centro">Voltar</div>
+              <div class="direita"></div>
             </div>
-            <div class="info">
-              <p>Saque mínimo R$10,00 e no máximo R$1000,00</p>
+            <div class="opcao">
+              <div class="esquerda"></div>
+              <div class="centro">Confirmar</div>
+              <div class="direita"><img src="../Imagens/seta-direita.png " style="width: 12px;"></div>
             </div>
-            
+          </div>
+          <div class="info">
+            <p>Saque mínimo R$10,00 e no máximo R$1000,00</p>
+          </div>
+
         </div>
         <div class="botoes-laterais">
           <button type="button" class="botao-superior"></button>
@@ -66,7 +65,7 @@
         </div>
 
         <div class="inserircartao">
-           
+
           <div class="detalhe"></div>
           <div class="inserir">
 
@@ -76,7 +75,7 @@
         <div class="slot-cartao">
           <img id="foto" src="" alt="" class="cartao" width="100%">
         </div>
-      
+
       </div>
 
       <div class="sacar-dinheiro">
@@ -107,15 +106,18 @@
             <button type="button" class="button-numbers" onclick="digitar('0')">0</button>
             <button type="button" class="button-numbers"></button>
           </div>
-          </div>
-         <div class="teclado-lateral">
-         <!-- Linha do teclado lateral -->
-          <button type="button" style="background-color: #ff0000;" class="button-lateral" id="btn-cancelar">CANCELAR</button>
-          <button type="button" onclick="limparCampo()" style="background-color:#fffc00;" class="button-lateral">CORRIGIR</button>
-          <button type="submit" style="background-color: #05ff00;" class="button-lateral" id="btn-confirmar" disabled>CONFIRMAR</button>
+        </div>
+        <div class="teclado-lateral">
+          <!-- Linha do teclado lateral -->
+          <button type="button" style="background-color: #ff0000;" class="button-lateral"
+            id="btn-cancelar">CANCELAR</button>
+          <button type="button" onclick="limparCampo()" style="background-color:#fffc00;"
+            class="button-lateral">CORRIGIR</button>
+          <button type="submit" style="background-color: #05ff00;" class="button-lateral" id="btn-confirmar"
+            disabled>CONFIRMAR</button>
           <button type="button" style="background-color: #c0c0c0;" class="button-lateral"></button>
-          </div>
-          
+        </div>
+
       </div>
     </div>
   </div>

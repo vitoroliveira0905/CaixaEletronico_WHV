@@ -35,7 +35,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     tdData.textContent = item.data;
     tdDesc.textContent = item.descricao;
-    tdValor.textContent = (item.valor < 0 ? "- " : "+ ") + "R$" + Math.abs(item.valor).toFixed(2);
+    tdValor.textContent = (item.valor < 0 ? "- " : "+ ") +
+      Math.abs(item.valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
 
     tr.appendChild(tdData);
     tr.appendChild(tdDesc);
@@ -43,7 +45,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     tbody.appendChild(tr);
   });
 
-  document.getElementById("voltar").onclick = function() {
+  document.getElementById("btn-voltar").onclick = function () {
+    window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
+  };
+  document.getElementById("btn2-voltar").onclick = function () {
     window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
 });

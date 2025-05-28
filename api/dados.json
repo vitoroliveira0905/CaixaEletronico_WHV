@@ -1,91 +1,89 @@
 {
-    "claudia": {
-        "id": "1000",
-        "nome": "Cláudia Santos",
-        "desc": "! Bem-vinda de volta!",
-        "imagem": "../Imagens/cartao1.png",
-        "senha": "1234",
-        "saldo": 1400.00,
-        "extrato": [
-            {
-                "data": "2023-10-01",
-                "descricao": "Pagamento de conta de luz",
-                "valor": -150.00
-            },
-            {
-                "data": "2023-10-05",
-                "descricao": "Depósito em dinheiro",
-                "valor": 500.00
-            },
-            {
-                "data": "2023-10-10",
-                "descricao": "Compra no supermercado",
-                "valor": -200.00
-            },
-
-            {
-                "data": "2023-10-10",
-                "descricao": "Compra no supermercado",
-                "valor": -200.00
-            },
-
-            {
-                "data": "2023-10-10",
-                "descricao": "Compra no supermercado",
-                "valor": -200.00
-            }
-            
-            
-        ]
-    },
-    "tux": {
-        "id": "2000",
-        "nome": "Tux da Silva",
-        "desc": "! Preparado para novas aventuras bancárias?",
-        "imagem": "../Imagens/cartao2.png",
-        "senha": "4321",
-        "saldo": 1500.00,
-        "extrato": [
-            {
-                "data": "2023-10-02",
-                "descricao": "Transferência recebida",
-                "valor": 300.00
-            },
-            {
-                "data": "2023-10-06",
-                "descricao": "Pagamento de internet",
-                "valor": -100.00
-            },
-            {
-                "data": "2023-10-12",
-                "descricao": "Compra de livros online",
-                "valor": -250.00
-            }
-        ]
-    },
-    "william": {
-        "id": "3000",
-        "nome": "William Reis",
-        "desc": "! Sua conta está atualizada.",
-        "imagem": "../Imagens/cartao3.png",
-        "senha": "2025",
-        "saldo": 1600.00,
-        "extrato": [
-            {
-                "data": "2023-10-03",
-                "descricao": "Pagamento de mensalidade escolar",
-                "valor": -300.00
-            },
-            {
-                "data": "2023-10-07",
-                "descricao": "Recebimento de salário",
-                "valor": 2000.00
-            },
-            {
-                "data": "2023-10-13",
-                "descricao": "Compra de eletrônicos",
-                "valor": -800.00
-            }
-        ]
-    }
+  "1000": {
+    "nome": "Cláudia Santos",
+    "desc": "! Bem-vinda de volta!",
+    "imagem": "../Imagens/cartao1.png",
+    "senha": "1234",
+    "saldo": 2100,
+    "extrato": [
+      {
+        "data": "2023-10-01",
+        "descricao": "Pagamento de conta de luz",
+        "valor": -150
+      },
+      {
+        "data": "2023-10-05",
+        "descricao": "Depósito em dinheiro",
+        "valor": 500
+      },
+      {
+        "data": "2023-10-10",
+        "descricao": "Compra no supermercado",
+        "valor": -200
+      },
+      {
+        "data": "2025-05-28",
+        "descricao": "Saque em dinheiro",
+        "valor": -20
+      },
+      {
+        "data": "2025-05-28",
+        "descricao": "Deposito em dinheiro",
+        "valor": 55
+      },
+      {
+        "data": "2025-05-28",
+        "descricao": "Deposito em dinheiro",
+        "valor": 1
+      }
+    ]
+  },
+  "2000": {
+    "nome": "Tux da Silva",
+    "desc": "! Preparado para novas aventuras bancárias?",
+    "imagem": "../Imagens/cartao2.png",
+    "senha": "4321",
+    "saldo": 1500,
+    "extrato": [
+      {
+        "data": "2023-10-02",
+        "descricao": "Transferência recebida",
+        "valor": 300
+      },
+      {
+        "data": "2023-10-06",
+        "descricao": "Pagamento de internet",
+        "valor": -100
+      },
+      {
+        "data": "2023-10-12",
+        "descricao": "Compra de livros online",
+        "valor": -250
+      }
+    ]
+  },
+  "3000": {
+    "nome": "William Reis",
+    "desc": "! Sua conta está atualizada.",
+    "imagem": "../Imagens/cartao3.png",
+    "senha": "2025",
+    "saldo": 1600,
+    "extrato": [
+      {
+        "data": "2023-10-03",
+        "descricao": "Pagamento de mensalidade escolar",
+        "valor": -300
+      },
+      {
+        "data": "2023-10-07",
+        "descricao": "Recebimento de salário",
+        "valor": 2000
+      },
+      {
+        "data": "2023-10-13",
+        "descricao": "Compra de eletrônicos",
+        "valor": -800
+      }
+    ]
+  }
 }

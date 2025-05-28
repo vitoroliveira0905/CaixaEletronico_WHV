@@ -1,3 +1,39 @@
+    /* Tela dourada sobre tudo */
+    #goldOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: #fcda43;
+      opacity: 0;
+      animation: entradaPagina 1.5s ease-in-out forwards;
+      z-index: 9999; /* Fica por cima de tudo */
+    }
+
+    @keyframes entradaPagina {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.7;
+      }
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    /* Só pra mostrar o conteúdo atrás */
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .conteudo {
+      padding: 2rem;
+    }
+
 body,
 html {
   margin: 0;

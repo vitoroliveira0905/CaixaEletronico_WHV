@@ -47,3 +47,4 @@ function redirecionarComDelay(usuario) {
   }, 1000);
 }
 
+

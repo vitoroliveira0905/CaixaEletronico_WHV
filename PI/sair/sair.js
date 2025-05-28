@@ -31,4 +31,6 @@ window.redirecionarComDelay = function() {
   setTimeout(() => {
     window.location.href = "../pagina_inicial/paginainicial.html";
   }, 2000);
+
+ 
 };

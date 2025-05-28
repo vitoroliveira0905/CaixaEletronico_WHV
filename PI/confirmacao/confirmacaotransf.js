@@ -8,6 +8,7 @@ function getParametro(nome) {
 document.addEventListener("DOMContentLoaded", async () => {
   const usuario = getParametro("usuario");
   const valor = getParametro("valor");
+  const conta = getParametro("conta");
   await carregarDadosUsuarios();
   const dados = dadosUsuarios[usuario];
 
@@ -30,9 +31,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("escolhavalor").textContent = valorFormatado;
 
   // Botão confirmar
-  document.getElementById("confirmar").addEventListener("click", () => {
-    alert(`Transferência de ${valorFormatado} confirmada!`);
-    // window.location.href = `sucesso.html?usuario=${usuario}&valor=${valor}`;
+  document.getElementById("btn-confirmar").addEventListener("click", () => {
+    
+     window.location.href = `../transf/transferiu.html?usuario=${usuario}&conta=${conta}&valor=${valor}`;
+  });
+  document.getElementById("btn2-confirmar").addEventListener("click", () => {
+    
+     window.location.href = `../transf/transferiu.html?usuario=${usuario}&conta=${conta}&valor=${valor}`;
   });
 
   document.getElementById("cancel").onclick = function() {

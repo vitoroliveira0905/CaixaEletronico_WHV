@@ -24,7 +24,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
-  document.getElementById("voltar").onclick = function() {
+  document.getElementById("btn-voltar").onclick = function() {
+    window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
+  };
+
+  document.getElementById("btn2-voltar").onclick = function() {
     window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
 
@@ -37,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   };
 
   window.digitar = function(caracter) {
-    if (campoSelecionado && campoSelecionado.value.length < 12) {
+    if (campoSelecionado && campoSelecionado.value.length < 4) {
       campoSelecionado.value += caracter;
     }
   };
@@ -51,18 +55,25 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.redirecionarConfirmacao = function() {
     let conta = document.getElementById("escolhaconta").value;
     let valor = document.getElementById("escolhavalor").value;
-    if (conta == "") {
-      alert("Insira uma conta");
+  
+    if (conta === "") {
+      alert("Insira a conta");
       return false;
     }
 
-    else if (valor == "") {
-      alert("Insira uma valor");
+    if (conta.length !== 4 || !/^\d{4}$/.test(conta)) {
+      alert("A conta deve conter exatamente 4 dígitos.");
       return false;
     }
-   
-    window.location.href = `../confirmacao/confirmacaotransf.html?usuario=${encodeURIComponent(usuario)}&valor=${valor}`;
+  
+    if (valor === "") {
+      alert("Insira um valor");
+      return false;
+    }
+  
+    window.location.href = `../confirmacao/confirmacaotransf.html?usuario=${encodeURIComponent(usuario)}&conta=${conta}&valor=${valor}`;
   };
 
-  document.getElementById("confirmar").addEventListener("click", () => window.redirecionarConfirmacao());
+  document.getElementById("btn-confirmar").addEventListener("click", () => window.redirecionarConfirmacao());
+  document.getElementById("btn2-confirmar").addEventListener("click", () => window.redirecionarConfirmacao());
 });

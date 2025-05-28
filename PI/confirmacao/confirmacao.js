@@ -23,25 +23,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
-  // Limpa o valor para conversão
-  const valorNumerico = parseFloat(valor.replace("R$", "").replace(",", ".").trim());
 
-  const valorFormatado = valorNumerico.toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-  });
+const valorNumerico = parseFloat(valor.replace("R$", "").replace(".", "").replace(",", ".").trim());
 
-  document.getElementById("valorSaque").textContent = valorFormatado;
+const valorFormatado = valorNumerico.toLocaleString("pt-BR", {
+  style: "currency",
+  currency: "BRL"
+});
+document.getElementById("valorSaque").textContent = valorFormatado;
 
-  // Botão confirmar
-  document.getElementById("confirmar").addEventListener("click", () => {
-    window.location.href = `../saque/sacou.html?usuario=${encodeURIComponent(usuario)}&valor=${encodeURIComponent(valorFormatado)}`;
-  });
+const valorInteiro = Math.floor(valorNumerico);
 
-  // Botão confirmar2
-  document.getElementById("confirm").addEventListener("click", () => {
-    window.location.href = `../saque/sacou.html?usuario=${encodeURIComponent(usuario)}&valor=${encodeURIComponent(valorFormatado)}`;
-  });
+document.getElementById("confirmar").addEventListener("click", () => {
+  window.location.href = `../saque/sacou.html?usuario=${encodeURIComponent(usuario)}&valor=${encodeURIComponent(valorInteiro)}`;
+});
+
+document.getElementById("confirm").addEventListener("click", () => {
+  window.location.href = `../saque/sacou.html?usuario=${encodeURIComponent(usuario)}&valor=${encodeURIComponent(valorInteiro)}`;
+});
+
 
   document.getElementById("cancel").onclick = function() {
     window.location.href = `../saque/saque.html?usuario=${encodeURIComponent(usuario)}`;

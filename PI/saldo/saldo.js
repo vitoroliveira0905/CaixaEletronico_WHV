@@ -24,7 +24,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.getElementById("saldo").innerText = dados.saldo;
 
-  document.getElementById("voltar").onclick = function() {
+  document.getElementById("btn-voltar").onclick = function() {
+    window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
+  };
+  document.getElementById("btn2-voltar").onclick = function() {
     window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
 });

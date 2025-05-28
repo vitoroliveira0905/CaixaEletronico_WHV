@@ -30,41 +30,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
-  // Captura e conversão correta do valor com "R$ 200,00"
   let valorTexto = getParametro("valor");
   valorTexto = decodeURIComponent(valorTexto);
   valorTexto = valorTexto.replace("R$", "").replace(/\s/g, "").replace(",", ".");
-  const valorSaque = parseFloat(valorTexto);
-
-  if (isNaN(valorSaque)) {
-    alert("Valor de saque inválido.");
-    return;
-  }
-
-  const notasDisponiveis = [200, 100, 50, 20, 10];
-  const notas = [];
-  let restante = Math.round(valorSaque); // Arredonda para inteiro
-
-  for (let nota of notasDisponiveis) {
-    while (restante >= nota) {
-      notas.push(nota);
-      restante -= nota;
-    }
-  }
-
-  if (restante > 0) {
-    alert("Não é possível sacar esse valor com as notas disponíveis.");
-    return;
-  }
+  const valorDeposito = parseFloat(valorTexto);
 
   // Atualiza o saldo localmente
-  dados.saldo -= valorSaque;
+  dados.saldo += valorDeposito;
 
   // Cria o novo lançamento do extrato
   const novoExtrato = {
     data: formatarDataHoje(),
-    descricao: "Saque em dinheiro",
-    valor: -valorSaque
+    descricao: "Depósito em dinheiro",
+    valor: +valorDeposito
   };
 
   // Atualiza o extrato localmente
@@ -80,21 +58,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
+  
   setTimeout(() => {
-    document.getElementById('mensagem').textContent = "Notas entregues:";
-    const container = document.getElementById('saidaNotas');
-
-    notas.forEach((valor, index) => {
-      const nota = document.createElement('div');
-      nota.classList.add('nota');
-      nota.style.animationDelay = `${index * 0.5}s`;
-      nota.innerHTML = `<img src="../Imagens/nota${valor}.png" alt="Nota de R$${valor}" style="width: 500%;">`;
-      container.appendChild(nota);
-    });
-
+    document.getElementById('mensagem').textContent = "Envelope recebido!";
+    const container = document.getElementById('saidaEnvelope');
+  
+    const envelope = document.createElement('div');
+    envelope.classList.add('envelope');
+    envelope.innerHTML = `<img src="../Imagens/envelope.png" alt="Envelope" style="width: 100%;">`;
+    container.appendChild(envelope);
+  
     setTimeout(() => {
       window.location.href = `../conta/conta_paginainicial.html?usuario=${usuario}`;
     }, 4000);
+  
+  }, 3000);
 
-  }, 5000);
 });
+

@@ -36,7 +36,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("saque200").addEventListener("click", () => redirecionarConfirmacao(200));
   document.getElementById("outrovalor").addEventListener("click", redirecionarOutroValor);
 
-  document.getElementById("voltar").onclick = function() {
+  document.getElementById("btn-voltar").onclick = function() {
+    window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
+  };
+  document.getElementById("btn2-voltar").onclick = function() {
     window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
 });

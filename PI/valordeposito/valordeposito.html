@@ -23,7 +23,7 @@
                 <div class="botoes-laterais">
                     <button type="button" class="botao-superior" ></button>
                     <button type="button" class="botao-superior"></button>
-                    <button type="button" class="botao-superior" id="voltar"></button>
+                    <button type="button" class="botao-superior" id="btn-voltar"></button>
 
                 </div>
                 <div class="tela">
@@ -35,7 +35,7 @@
                         <h4>Digite o valor</h4>
                         <div class="valor">
                             <h2>Valor</h2>  
-                            <input type="text" placeholder="R$" name="valor" id="escolhavalor" autocomplete="off" />
+                            <input type="text" placeholder="R$" name="valor" id="escolhavalor" value="R$ 0,00" autocomplete="off" />
                         </div>
                         <div class="depositar">
                             <div class="opcao">
@@ -49,12 +49,15 @@
                                 <div class="direita"><img src="../Imagens/seta-direita.png " style="width: 12px;"></div>
                             </div>
                         </div>
+                        <div class="info">
+                            <p>Depósito mínimo R$10,00 e no máximo R$1000,00</p>
+                        </div>
                     </div>
                 </div>
                 <div class="botoes-laterais">
                     <button type="button" class="botao-superior"></button>
                     <button type="button" class="botao-superior"></button>
-                    <button type="button" class="botao-superior" id="confirmar"></button>
+                    <button type="button" class="botao-superior" id="btn-confirmar"></button>
 
                 </div>
 
@@ -103,9 +106,9 @@
                     </div>
                 </div>
                 <div class="teclado-lateral">
-                    <button type="button" style="background-color: #ff0000;" class="button-lateral">CANCELAR</button>
-                    <button type="button"  onclick="limparCampo()" style="background-color:#fffc00;" class="button-lateral">CORRIGIR</button>
-                    <button type="button" onclick="" style="background-color: #05ff00;" class="button-lateral" id="confirmar">CONFIRMAR</button>
+                    <button type="button" style="background-color: #ff0000;" class="button-lateral" id="btn2-voltar">CANCELAR</button>
+                    <button type="button"  onclick="limparCampo()" style="background-color:#fffc00;" class="button-lateral" >CORRIGIR</button>
+                    <button type="button" onclick="" style="background-color: #05ff00;" class="button-lateral" id="btn2-confirmar">CONFIRMAR</button>
                     <button type="button" style="background-color: #c0c0c0;" class="button-lateral"></button>
                 </div>
             </div>

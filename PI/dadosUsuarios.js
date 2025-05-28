@@ -13,3 +13,22 @@ export async function carregarDadosUsuarios() {
         console.error('Erro ao carregar os dados dos usuários:', error);
     }
 }
+
+export async function atualizarUsuario(usuario, novosDados) {
+    try {
+        const response = await fetch(`http://localhost:3000/api/usuario/${usuario}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(novosDados)
+        });
+        const data = await response.json();
+        if (data.sucesso) {
+            // Atualiza o objeto local também
+            dadosUsuarios[usuario] = { ...dadosUsuarios[usuario], ...novosDados };
+        }
+        return data;
+    } catch (error) {
+        console.error('Erro ao atualizar o usuário:', error);
+        return { sucesso: false, erro: error.message };
+    }
+}

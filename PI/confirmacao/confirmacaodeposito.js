@@ -23,17 +23,23 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
-  const valorFormatado = parseFloat(valor).toLocaleString("pt-BR", {
-    style: "currency",
-    currency: "BRL"
-  });
-  document.getElementById("escolhavalor").textContent = valorFormatado;
 
-  // Botão confirmar
-  document.getElementById("confirmar").addEventListener("click", () => {
-    alert(`Deposito de ${valorFormatado} confirmada!`);
-    // window.location.href = `sucesso.html?usuario=${usuario}&valor=${valor}`;
+const valorNumerico = parseFloat(valor.replace("R$", "").replace(".", "").replace(",", ".").trim());
+
+const valorFormatado = valorNumerico.toLocaleString("pt-BR", {
+  style: "currency",
+  currency: "BRL"
+});
+document.getElementById("escolhavalor").textContent = valorFormatado;
+
+const valorInteiro = Math.floor(valorNumerico);
+
+  document.getElementById("btn-confirmar").addEventListener("click", () => {
+     window.location.href = `../valordeposito/depositou.html?usuario=${usuario}&valor=${valorInteiro}`;
   });
+  document.getElementById("btn2-confirmar").addEventListener("click", () => {
+    window.location.href = `../valordeposito/depositou.html?usuario=${usuario}&valor=${valorFormatado}`;
+ });
 
   document.getElementById("cancel").onclick = function() {
     window.location.href = `../valordeposito/valordeposito.html?usuario=${encodeURIComponent(usuario)}`;

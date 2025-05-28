@@ -24,32 +24,38 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
-  document.getElementById("voltar").onclick = function() {
+  document.getElementById("btn-voltar").onclick = function () {
+    window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
+  };
+  document.getElementById("btn2-voltar").onclick = function () {
     window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
 
   // Funções para seleção e digitação
-  window.digitar = function(caracter) {
+  window.digitar = function (caracter) {
     const input = document.getElementById("escolhaconta");
     if (input && input.value.length < 4) {
       input.value += caracter;
     }
   };
-  window.limparCampo = function() {
+  window.limparCampo = function () {
     const input = document.getElementById("escolhaconta");
     if (input) input.value = '';
   };
 
 
-  document.getElementById("confirmar").onclick = function() {
+  window.redirecionarConfirmacao = function () {
     let conta = document.getElementById("escolhaconta").value;
-    if (conta == "" ) {
+    if (conta == "") {
       alert("Insira uma conta");
       return false;
     }
-    window.location.href = `../valordeposito/valordeposito.html?usuario=${encodeURIComponent(usuario)}`;
+    window.location.href = `../valordeposito/valordeposito.html?usuario=${encodeURIComponent(usuario)}&destino=${encodeURIComponent(conta)}`;
   };
 
+  document.getElementById("btn-confirmar").addEventListener("click", () => window.redirecionarConfirmacao());
+  document.getElementById("btn2-confirmar").addEventListener("click", () => window.redirecionarConfirmacao());
 
-  
+
+
 });

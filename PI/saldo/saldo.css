@@ -194,10 +194,10 @@ h3 {
 
 .opcoes {
     display: flex;
-    margin-top: 25px;
+    margin-top: 22px;
     align-items: center;
     gap: 42px;
-    margin-left: 40px;
+    margin-left: 20px;
 
 }
 
