@@ -8,6 +8,13 @@ function getParametro(nome) {
 let campoSelecionado = null;
 
 document.addEventListener("DOMContentLoaded", async () => {
+  const campoConta = document.getElementById("escolhaconta");
+  const campoValor = document.getElementById("escolhavalor");
+  if (campoValor) {
+    campoValor.value = "R$0,00";
+    campoValor.readOnly = true;
+  }
+
   const usuario = getParametro("usuario");
   await carregarDadosUsuarios();
   const dados = dadosUsuarios[usuario];
@@ -40,14 +47,32 @@ document.addEventListener("DOMContentLoaded", async () => {
     campoSelecionado.style.border = "2px solid yellow";
   };
 
-  window.digitar = function(caracter) {
-    if (campoSelecionado && campoSelecionado.value.length < 4) {
-      campoSelecionado.value += caracter;
+
+  let valorDigitado = ""; // valor que o usuário digitou (só números)
+
+  window.digitar = function (caracter) {
+    if (!campoSelecionado) return;
+  
+    if (campoSelecionado.id === "escolhavalor") {
+      if (valorDigitado.length >= 5) return; // limite de 5 dígitos, ex: 99999
+  
+      valorDigitado += caracter;
+  
+      let valorFormatado = `R$ ${parseInt(valorDigitado)},00`;
+      campoSelecionado.value = valorFormatado;
+    } else {
+      // Para qualquer outro campo (ex: escolhaconta)
+      if (campoSelecionado.value.length < 4) {
+        campoSelecionado.value += caracter;
+      }
     }
   };
 
-  window.limparCampo = function() {
-    if (campoSelecionado) {
+  window.limparCampo = function () {
+    if (campoSelecionado && campoSelecionado.id === "escolhavalor") {
+      valorDigitado = "";
+      campoSelecionado.value = "R$0,00";
+    } else if (campoSelecionado) {
       campoSelecionado.value = '';
     }
   };

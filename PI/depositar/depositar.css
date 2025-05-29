@@ -175,7 +175,7 @@ h2 {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     background: url("../Imagens/1151629.jpg");
-
+   
 
 }
 
@@ -213,7 +213,7 @@ h3 {
     color: #000;
     border: solid 2px #ffffff;
     border-radius: 10px;
-
+   
 }
 
 .esquerda,
@@ -314,17 +314,14 @@ header {
     width: 100%;
     height: 315px;
     position: relative;
-    margin-top: 42px;
+    margin-top: 20px;
 }
-
 
 .conta{
     align-items: center;
     display: flex;
-    margin-top: 28px;
+    margin-top: 2px;
     pointer-events: none;
-    margin-left: 100px;
-
     input{
         border-radius: 6px;
         border: 1px solid #a7a7a7;
@@ -347,16 +344,37 @@ header {
     }
 }
 
+.valor{
+    align-items: center;
+    display: flex;
+    margin-top: 2px;
+    pointer-events: none;
+    input{
+          border-radius: 6px;
+        border: 1px solid #a7a7a7;
+        width: 130px;
+        padding: 10px 5px;
+        font-size: 20px;
+        margin-left: 70px;
+        margin-top: 10px;
+      
+    }
+    h2{
+        color: #494949;
+        font-size: 25px;
+       margin-left: 30px;
+       background-color: #fcda43;
+       width: 100px;
+       height: 30px;
+       border-radius: 10px;
+       text-align: center;
+    }
+}
 
-h4 {
-    font-size: 24px;
-    color: #353434;
-    text-align: center;
-    width: 350px;
-    height: 35px;
-    background-color: #fcda43;
-    border-radius: 20px;
-    margin-left: 100px;
-    margin-top: -10;
-    padding-top: 4px;
+h4{
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+    font-size: 18px;
+
 }

@@ -32,13 +32,16 @@ function debito(valorDebito) {
 }
 
 async function credito() {
+  console.log("Iniciando crédito...");
   const contaDestino = getParametro("conta");
+  console.log("Conta destino:", contaDestino);
   if (!contaDestino) {
     alert("Conta de destino não especificada.");
     return;
   }
 
   const destino = dadosUsuarios[contaDestino];
+  console.log("Dados do destino:", destino);
   if (!destino) {
     alert("Usuário de destino não encontrado.");
     return;
@@ -70,9 +73,15 @@ async function credito() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
+  console.log("Início do DOMContentLoaded");
   const usuario = getParametro("usuario");
+  console.log("Usuário:", usuario);
+
   await carregarDadosUsuarios();
+  console.log("Dados carregados:", dadosUsuarios);
+
   dados = dadosUsuarios[usuario];
+  console.log("Dados do usuário:", dados);
 
   if (!dados) {
     alert("Usuário não encontrado.");
@@ -102,6 +111,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     saldo: dados.saldo,
     extrato: dados.extrato
   });
+  console.log("Resultado do remetente:", resultado);
 
   if (!resultado.sucesso) {
     alert("Erro ao atualizar saldo!");
@@ -110,5 +120,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   await credito();
 
+  console.log("Transferência concluída, redirecionando...");
   window.location.href = `conta_paginainicial.html?usuario=${usuario}`;
 });

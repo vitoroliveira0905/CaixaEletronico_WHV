@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
-  const valorFormatado = parseFloat(valor).toLocaleString("pt-BR", {
+  const valorNumerico = parseFloat(valor.replace("R$", "").replace(".", "").replace(",", ".").trim());
+
+  const valorFormatado = valorNumerico.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL"
   });
