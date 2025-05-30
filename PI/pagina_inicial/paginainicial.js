@@ -9,7 +9,7 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) { slideIndex = 1 }
   slides[slideIndex - 1].style.display = "block";
-  setTimeout(showSlides, 3000); // troca a cada 3 segundos
+  setTimeout(showSlides, 6000); // troca a cada 3 segundos
 }
 
 let indiceCartao = 0;

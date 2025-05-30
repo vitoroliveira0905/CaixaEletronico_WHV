@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caixa Eletrônico WHV</title>
-  <link href="padrão_conta.css" rel="stylesheet">
+  <link href="../global.css" rel="stylesheet">
+  <link href="../tela.css" rel="stylesheet">
   <link rel="shortcut icon" href="../Imagens/logo-whv-bank.png" type="image/x-icon">
 </head>
 
@@ -31,9 +32,11 @@
             <header>
               <h2>Olá,<span id="nome"></span> <span id="descricao"></span></h2>
             </header>
-            <h3>Use os botões ao lado da tela.</h3>
+            <div class="mensagem-instrucao">
+              <h3>Use os botões ao lado da tela.</h3>
+            </div>
             <div class="menu">
-              <div class="opcoes">
+              <div class="opcoes" style="flex-direction: column;">
                 <div class="opcao">
                   <div class="esquerda"><img src="../Imagens/seta-esquerda.png " style="width: 12px;"></div>
                   <div class="centro">Saldo</div>
@@ -51,7 +54,7 @@
                 </div>
 
               </div>
-              <div class="opcoes">
+              <div class="opcoes" style="flex-direction: column;">
                 <div class="opcao">
                   <div class="esquerda"></div>
                   <div class="centro">Depositar</div>

@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       return false;
     }
   
-    if (valor === "") {
+    if (valor === "R$0,00") {
       alert("Insira um valor");
       return false;
     }

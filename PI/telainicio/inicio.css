@@ -12,47 +12,69 @@ html {
   background-size: cover;
   font-family: Arial, sans-serif;
   overflow: hidden;
+ background-color: black;
 }
 
-
-image {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.container {
+.caixa-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  position: relative;
+  gap: 50px;
 }
 
-.botao {
-  padding: 30px 60px;
-  font-size: 28px;
-  background: linear-gradient(45deg, #fcda43, yellow);
-  color: black;
-  border: none;
-  border-radius: 20px;
+.btn-invisivel {
+  position: absolute;
+  width: 12%;    /* ajuste conforme necessário */
+  height: 30%;   /* ajuste conforme necessário */
+  opacity: 0;    /* invisível */
   cursor: pointer;
-  box-shadow: 0 0 20px #fcda43;
-  position: relative;
-  z-index: 2;
+  border: none;
+  background: black;
+  z-index: 9999;
+
+}
+
+.btn-invisivel2 {
+  position: absolute;
+  width: 18%;    /* ajuste conforme necessário */
+  height: 30%;   /* ajuste conforme necessário */
+  opacity: 0;    /* invisível */
+  cursor: pointer;
+  border: none;
+  background: black;
+  z-index: 9999;
+
+}
+
+.btn-invisivel3 {
+  position: absolute;
+  width: 25%;    /* ajuste conforme necessário */
+  height: 40%;   /* ajuste conforme necessário */
+  opacity: 0;    /* invisível */
+  cursor: pointer;
+  border: none;
+  background: black;
+  z-index: 9999;
+
 }
 
 .efeito-circulo {
   position: fixed;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, #fcda43, yellow, white);
-  border-radius: 80%;
-  transform: translate(-90%, -80%) scale(0);
-  animation: expandir 5s forwards;
-  pointer-events: none;
-  z-index: 5;
+  width: 50px;
+  height: 50px;
+  background: #fcda43;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 1;
+  animation: expandir 2.5s forwards;
+  z-index: 9999;
 }
+
+p{
+  font-size: large;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 60px;
+}
+
 
 @keyframes expandir {
   0% {
@@ -69,4 +91,47 @@ image {
     transform: translate(-50%, -50%) scale(0);
     opacity: 0;
   }
+}
+
+.seta-amarela {
+  position: absolute;
+  top: 14%;         /* ajuste conforme necessário */
+  left: 35%;        /* ajuste para posicionar sobre o caixa */
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 50px solid #ffbb00; /* esta é a seta */
+  animation: subirDescer 1s infinite ease-in-out;
+  z-index: 9999;
+}
+.seta-amarela2 {
+  position: absolute;
+  top: 9%;         /* ajuste conforme necessário */
+  left: 52%;        /* ajuste para posicionar sobre o caixa */
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 50px solid #ffbb00; /* esta é a seta */
+  animation: subirDescer 1s infinite ease-in-out;
+  z-index: 9999;
+}
+.seta-amarela3 {
+  position: absolute;
+  top: 3%;         /* ajuste conforme necessário */
+  left: 77%;        /* ajuste para posicionar sobre o caixa */
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-top: 50px solid #ffbb00; /* esta é a seta */
+  animation: subirDescer 1s infinite ease-in-out;
+  z-index: 9999;
+}
+
+@keyframes subirDescer {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(15px); }
+  100% { transform: translateY(0); }
 }
