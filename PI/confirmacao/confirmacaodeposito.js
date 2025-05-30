@@ -1,4 +1,4 @@
-import { dadosUsuarios, carregarDadosUsuarios } from '../dadosUsuarios.js';
+import { carregarDadosUsuarios } from '../dadosUsuarios.js';
 
 function getParametro(nome) {
   const url = new URL(window.location.href);
@@ -6,43 +6,29 @@ function getParametro(nome) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const usuario = getParametro("usuario");
+  const usuario = getParametro("usuario"); // Usuário conectado
+  const conta = getParametro("conta"); // Conta de destino
   const valor = getParametro("valor");
   await carregarDadosUsuarios();
-  const dados = dadosUsuarios[usuario];
 
-  if (!dados) {
-    alert("Usuário não encontrado.");
-    return;
-  }
+  const valorNumerico = parseFloat(valor.replace("R$", "").replace(".", "").replace(",", ".").trim());
 
-  let imagem = document.getElementById("foto");
-  if (imagem) {
-    imagem.src = dados.imagem;
-    imagem.alt = dados.nome;
-    imagem.style.display = "block";
-  }
-
-
-const valorNumerico = parseFloat(valor.replace("R$", "").replace(".", "").replace(",", ".").trim());
-
-const valorFormatado = valorNumerico.toLocaleString("pt-BR", {
-  style: "currency",
-  currency: "BRL"
-});
-document.getElementById("escolhavalor").textContent = valorFormatado;
-
-const valorInteiro = Math.floor(valorNumerico);
+  const valorFormatado = valorNumerico.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+  document.getElementById("escolhavalor").textContent = valorFormatado;
 
   document.getElementById("btn-confirmar").addEventListener("click", () => {
-     window.location.href = `../valordeposito/depositou.html?usuario=${usuario}&valor=${valorInteiro}`;
+    window.location.href = `../valordeposito/depositou.html?usuario=${usuario}&conta=${conta}&valor=${valor}`;
   });
+
   document.getElementById("btn2-confirmar").addEventListener("click", () => {
-    window.location.href = `../valordeposito/depositou.html?usuario=${usuario}&valor=${valorFormatado}`;
- });
+    window.location.href = `../valordeposito/depositou.html?usuario=${usuario}&conta=${conta}&valor=${valor}`;
+  });
 
   document.getElementById("cancel").onclick = function() {
-    window.location.href = `../valordeposito/valordeposito.html?usuario=${encodeURIComponent(usuario)}`;
+    window.location.href = `../depositar/depositar.html?usuario=${encodeURIComponent(usuario)}`;
   };
 
   document.getElementById("cancela").onclick = function() {

@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
       valorDigitado += caracter;
   
-      let valorFormatado = `R$ ${parseInt(valorDigitado)},00`;
+      let valorFormatado = `R$${parseInt(valorDigitado)},00`;
       campoSelecionado.value = valorFormatado;
     } else {
       // Para qualquer outro campo (ex: escolhaconta)

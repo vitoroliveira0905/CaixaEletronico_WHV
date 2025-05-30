@@ -72,28 +72,33 @@ async function credito() {
   }
 }
 
+
+
+
 document.addEventListener("DOMContentLoaded", async () => {
-  console.log("Início do DOMContentLoaded");
   const usuario = getParametro("usuario");
-  console.log("Usuário:", usuario);
 
   await carregarDadosUsuarios();
-  console.log("Dados carregados:", dadosUsuarios);
-
   dados = dadosUsuarios[usuario];
-  console.log("Dados do usuário:", dados);
 
   if (!dados) {
     alert("Usuário não encontrado.");
     return;
   }
-
   let imagem = document.getElementById("foto");
   if (imagem) {
     imagem.src = dados.imagem;
     imagem.alt = dados.nome;
     imagem.style.display = "block";
   }
+  // Verifica se a transferência já foi feita nesta sessão
+  const chaveTransferencia = `transferenciaFeita_${usuario}`;
+  if (sessionStorage.getItem(chaveTransferencia)) {
+    console.log("Transferência já executada nesta sessão.");
+    window.location.href = `../conta/conta_paginainicial.html?usuario=${usuario}`;
+    return;
+  }
+
 
   let valorTexto = getParametro("valor");
   valorTexto = decodeURIComponent(valorTexto);
@@ -120,6 +125,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   await credito();
 
-  console.log("Transferência concluída, redirecionando...");
-  window.location.href = `conta_paginainicial.html?usuario=${usuario}`;
+  // Marca como feito para evitar repetição
+  sessionStorage.setItem(chaveTransferencia, "true");
+
+   
 });

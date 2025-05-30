@@ -34,12 +34,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Botão confirmar
   document.getElementById("btn-confirmar").addEventListener("click", () => {
-    
-     window.location.href = `../transf/transferiu.html?usuario=${usuario}&conta=${conta}&valor=${valor}`;
+    sessionStorage.removeItem(`transferenciaFeita_${usuario}`); // Limpa a flag
+    window.location.href = `../transf/transferiu.html?usuario=${usuario}&conta=${conta}&valor=${valor}`;
   });
+  
   document.getElementById("btn2-confirmar").addEventListener("click", () => {
-    
-     window.location.href = `../transf/transferiu.html?usuario=${usuario}&conta=${conta}&valor=${valor}`;
+    sessionStorage.removeItem(`transferenciaFeita_${usuario}`); // Limpa a flag
+    window.location.href = `../transf/transferiu.html?usuario=${usuario}&conta=${conta}&valor=${valor}`;
   });
 
   document.getElementById("cancel").onclick = function() {

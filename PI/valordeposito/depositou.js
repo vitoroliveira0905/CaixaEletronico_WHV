@@ -14,12 +14,12 @@ function formatarDataHoje() {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const usuario = getParametro("usuario");
+  const conta = getParametro("conta"); // Conta de destino
   await carregarDadosUsuarios();
-  const dados = dadosUsuarios[usuario];
+  const dados = dadosUsuarios[conta]; // Busca os dados da conta de destino
 
   if (!dados) {
-    alert("Usuário não encontrado.");
+    alert("Conta de destino não encontrada.");
     return;
   }
 
@@ -52,27 +52,24 @@ document.addEventListener("DOMContentLoaded", async () => {
   dados.extrato.push(novoExtrato);
 
   // Salva no backend via função centralizada
-  const resultado = await atualizarUsuario(usuario, { saldo: dados.saldo, extrato: dados.extrato });
+  const resultado = await atualizarUsuario(conta, { saldo: dados.saldo, extrato: dados.extrato });
   if (!resultado.sucesso) {
     alert("Erro ao atualizar saldo!");
     return;
   }
 
-  
   setTimeout(() => {
     document.getElementById('mensagem').textContent = "Envelope recebido!";
     const container = document.getElementById('saidaEnvelope');
-  
+
     const envelope = document.createElement('div');
     envelope.classList.add('envelope');
     envelope.innerHTML = `<img src="../Imagens/envelope.png" alt="Envelope" style="width: 100%;">`;
     container.appendChild(envelope);
-  
+
     setTimeout(() => {
-      window.location.href = `../conta/conta_paginainicial.html?usuario=${usuario}`;
+      window.location.href = `../conta/conta_paginainicial.html?usuario=${getParametro("usuario")}`;
     }, 4000);
-  
+
   }, 3000);
-
 });
-

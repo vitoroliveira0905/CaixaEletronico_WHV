@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   
       valorDigitado += caracter;
   
-      let valorFormatado = `R$ ${parseInt(valorDigitado)},00`;
+      let valorFormatado = `R$${parseInt(valorDigitado)},00`;
       campoSelecionado.value = valorFormatado;
     } else {
       // Para qualquer outro campo (ex: escolhaconta)
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       alert("Insira a conta");
       return false;
     }
-
+  
     if (conta.length !== 4 || !/^\d{4}$/.test(conta)) {
       alert("A conta deve conter exatamente 4 dígitos.");
       return false;
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       return false;
     }
   
-    window.location.href = `../confirmacao/confirmacaodeposito.html?usuario=${encodeURIComponent(usuario)}&conta=${conta}&valor=${valor}`;
+    window.location.href = `../confirmacao/confirmacaodeposito.html?usuario=${encodeURIComponent(getParametro("usuario"))}&conta=${conta}&valor=${valor}`;
   };
 
   document.getElementById("btn-confirmar").addEventListener("click", () => window.redirecionarConfirmacao());
