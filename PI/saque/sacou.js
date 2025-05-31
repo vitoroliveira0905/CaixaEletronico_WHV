@@ -1,16 +1,8 @@
-import { dadosUsuarios, carregarDadosUsuarios, atualizarUsuario } from '../dadosUsuarios.js';
+import { dadosUsuarios, carregarDadosUsuarios } from '../dadosUsuarios.js';
 
 function getParametro(nome) {
   const url = new URL(window.location.href);
   return url.searchParams.get(nome);
-}
-
-function formatarDataHoje() {
-  const hoje = new Date();
-  const ano = hoje.getFullYear();
-  const mes = String(hoje.getMonth() + 1).padStart(2, '0');
-  const dia = String(hoje.getDate()).padStart(2, '0');
-  return `${ano}-${mes}-${dia}`;
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -54,29 +46,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   if (restante > 0) {
     alert("Não é possível sacar esse valor com as notas disponíveis.");
-    return;
-  }
-
-  // Atualiza o saldo localmente
-  dados.saldo -= valorSaque;
-
-  // Cria o novo lançamento do extrato
-  const novoExtrato = {
-    data: formatarDataHoje(),
-    descricao: "Saque em dinheiro",
-    valor: -valorSaque
-  };
-
-  // Atualiza o extrato localmente
-  if (!Array.isArray(dados.extrato)) {
-    dados.extrato = [];
-  }
-  dados.extrato.push(novoExtrato);
-
-  // Salva no backend via função centralizada
-  const resultado = await atualizarUsuario(usuario, { saldo: dados.saldo, extrato: dados.extrato });
-  if (!resultado.sucesso) {
-    alert("Erro ao atualizar saldo!");
     return;
   }
 

@@ -1,8 +1,16 @@
-import { dadosUsuarios, carregarDadosUsuarios } from '../dadosUsuarios.js';
+import { dadosUsuarios, carregarDadosUsuarios, atualizarUsuario } from '../dadosUsuarios.js';
 
 function getParametro(nome) {
   const url = new URL(window.location.href);
   return url.searchParams.get(nome);
+}
+
+function formatarDataHoje() {
+  const hoje = new Date();
+  const ano = hoje.getFullYear();
+  const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  return `${ano}-${mes}-${dia}`;
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -23,25 +31,44 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
+  const valorNumerico = parseFloat(valor.replace("R$", "").replace(".", "").replace(",", ".").trim());
+  const valorFormatado = valorNumerico.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+  document.getElementById("valorSaque").textContent = valorFormatado;
 
-const valorNumerico = parseFloat(valor.replace("R$", "").replace(".", "").replace(",", ".").trim());
+  const valorInteiro = Math.floor(valorNumerico);
 
-const valorFormatado = valorNumerico.toLocaleString("pt-BR", {
-  style: "currency",
-  currency: "BRL"
-});
-document.getElementById("valorSaque").textContent = valorFormatado;
+  async function processarSaqueERedirecionar() {
+    // Atualiza o saldo localmente
+    dados.saldo -= valorInteiro;
 
-const valorInteiro = Math.floor(valorNumerico);
+    // Cria o novo lançamento do extrato
+    const novoExtrato = {
+      data: formatarDataHoje(),
+      descricao: "Saque em dinheiro",
+      valor: -valorInteiro
+    };
 
-document.getElementById("confirmar").addEventListener("click", () => {
-  window.location.href = `../saque/sacou.html?usuario=${encodeURIComponent(usuario)}&valor=${encodeURIComponent(valorInteiro)}`;
-});
+    // Atualiza o extrato localmente
+    if (!Array.isArray(dados.extrato)) {
+      dados.extrato = [];
+    }
+    dados.extrato.push(novoExtrato);
 
-document.getElementById("confirm").addEventListener("click", () => {
-  window.location.href = `../saque/sacou.html?usuario=${encodeURIComponent(usuario)}&valor=${encodeURIComponent(valorInteiro)}`;
-});
+    // Salva no backend via função centralizada
+    const resultado = await atualizarUsuario(usuario, { saldo: dados.saldo, extrato: dados.extrato });
+    if (!resultado.sucesso) {
+      alert("Erro ao atualizar saldo!");
+      return;
+    }
 
+    window.location.href = `../saque/sacou.html?usuario=${encodeURIComponent(usuario)}&valor=${encodeURIComponent(valorInteiro)}`;
+  }
+
+  document.getElementById("confirmar").addEventListener("click", processarSaqueERedirecionar);
+  document.getElementById("confirm").addEventListener("click", processarSaqueERedirecionar);
 
   document.getElementById("cancel").onclick = function() {
     window.location.href = `../saque/saque.html?usuario=${encodeURIComponent(usuario)}`;

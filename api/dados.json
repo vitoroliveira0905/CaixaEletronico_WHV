@@ -4,7 +4,7 @@
     "desc": "! Bem-vinda de volta!",
     "imagem": "../Imagens/cartao1.png",
     "senha": "1234",
-    "saldo": 600,
+    "saldo": 1000,
     "extrato": [
       {
         "data": "2023-10-01",
@@ -20,16 +20,6 @@
         "data": "2023-10-10",
         "descricao": "Compra no supermercado",
         "valor": -200
-      },
-      {
-        "data": "2025-05-30",
-        "descricao": "Saque em dinheiro",
-        "valor": -200
-      },
-      {
-        "data": "2025-05-30",
-        "descricao": "Saque em dinheiro",
-        "valor": -200
       }
     ]
   },
@@ -38,7 +28,7 @@
     "desc": "! Preparado para novas aventuras bancárias?",
     "imagem": "../Imagens/cartao2.png",
     "senha": "4321",
-    "saldo": 2200,
+    "saldo": 2000,
     "extrato": [
       {
         "data": "2023-10-02",
@@ -54,16 +44,6 @@
         "data": "2023-10-12",
         "descricao": "Compra de livros online",
         "valor": -250
-      },
-      {
-        "data": "2025-05-30",
-        "descricao": "Depósito em dinheiro",
-        "valor": 100
-      },
-      {
-        "data": "2025-05-30",
-        "descricao": "Depósito em dinheiro",
-        "valor": 100
       }
     ]
   },
