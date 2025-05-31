@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caixa Eletrônico WHV</title>
-  <link href="outrovalor.css" rel="stylesheet">
+  <link href="../padrao.css" rel="stylesheet">
   <link rel="shortcut icon" href="../Imagens/logo-whv-bank.png" type="image/x-icon">
 </head>
 
@@ -29,33 +29,37 @@
         </div>
         <div class="tela">
 
+          <div class="tela-conta">
+            <header>
 
-          <div class="telavalor">
+            </header>
             <div class="valor">
-              <div class="amarelo"></div>
               <form onsubmit="return enviarValor()">
                 <h2>Digite o valor</h2>
                 <div class="digitarvalor">
                   <input id="valorinserido" value="R$ 0,00" readonly />
                 </div>
-              </form><br>
+              </form>
+            </div>
+            
+
+            <div class="opcoes-horizontal">
+              <div class="opcao">
+                <div class="esquerda"><img src="../Imagens/seta-esquerda.png " style="width: 12px;">
+                </div>
+                <div class="centro">Voltar</div>
+                <div class="direita"></div>
+              </div>
+              <div class="opcao">
+                <div class="esquerda"></div>
+                <div class="centro">Confirmar</div>
+                <div class="direita"><img src="../Imagens/seta-direita.png " style="width: 12px;"></div>
+              </div>
             </div>
 
-          </div>
-          <div class="opcoes">
-            <div class="opcao">
-              <div class="esquerda"><img src="../Imagens/seta-esquerda.png " style="width: 12px;"></div>
-              <div class="centro">Voltar</div>
-              <div class="direita"></div>
-            </div>
-            <div class="opcao">
-              <div class="esquerda"></div>
-              <div class="centro">Confirmar</div>
-              <div class="direita"><img src="../Imagens/seta-direita.png " style="width: 12px;"></div>
-            </div>
-          </div>
-          <div class="info">
+            <div class="info">
             <p>Saque mínimo R$10,00 e no máximo R$1000,00</p>
+          </div>
           </div>
 
         </div>

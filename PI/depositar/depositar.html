@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caixa Eletrônico WHV</title>
-    <link href="depositar.css" rel="stylesheet">
+    <link href="../padrao.css" rel="stylesheet">
     <link rel="shortcut icon" href="../Imagens/logo-whv-bank.png" type="image/x-icon">
 
 </head>
@@ -32,10 +32,11 @@
                         <header>
 
                         </header>
+                        <div class="mensagem-instrucao">
+                            <h3>Use os botões ao lado da tela.</h3>
+                        </div>
 
-                        <h4>Use os botões ao lado da tela!</h4>
-
-                        <div class="conta">
+                        <div class="inserir-dado" style="margin-top: -6px;">
                             <h2>Conta</h2>
                             <input type="text" placeholder="" name="conta" id="escolhaconta" autocomplete="off"
                                 onclick="definirInputAtivo('escolhaconta')" />
@@ -43,11 +44,12 @@
 
                         </div>
 
-                        <div class="valor">
+                        <div class="inserir-dado" style="margin-bottom: 23px;">
                             <h2>Valor</h2>
-                            <input type="text" id="escolhavalor" autocomplete="off" readonly onclick="definirInputAtivo('escolhavalor')" />
+                            <input type="text" id="escolhavalor" autocomplete="off" readonly
+                                onclick="definirInputAtivo('escolhavalor')" />
                         </div>
-                        <div class="depositar">
+                        <div class="opcoes-horizontal">
                             <div class="opcao">
                                 <div class="esquerda"><img src="../Imagens/seta-esquerda.png " style="width: 12px;">
                                 </div>
@@ -114,7 +116,8 @@
                     </div>
                 </div>
                 <div class="teclado-lateral">
-                    <button type="button" id="btn2-voltar" style="background-color: #ff0000;" class="button-lateral">CANCELAR</button>
+                    <button type="button" id="btn2-voltar" style="background-color: #ff0000;"
+                        class="button-lateral">CANCELAR</button>
                     <button type="button" onclick="limparCampo()" style="background-color:#fffc00;"
                         class="button-lateral">CORRIGIR</button>
                     <button type="button" onclick="" style="background-color: #05ff00;" class="button-lateral"
