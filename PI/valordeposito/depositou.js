@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   setTimeout(() => {
-    document.getElementById('mensagem').textContent = "Envelope recebido!";
+    document.getElementById('mensagem-deposito').textContent = "Envelope recebido!";
     const container = document.getElementById('saidaEnvelope');
 
     const envelope = document.createElement('div');

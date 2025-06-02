@@ -8,7 +8,7 @@ body,
 html {
   width: 100%;
   height: 100%;
-  background: url('../Imagens/teleinicio.png') ;
+  background: url('Imagens/teleinicio.png') ;
   background-size: cover;
   font-family: Arial, sans-serif;
   overflow: hidden;
@@ -62,9 +62,9 @@ html {
   height: 50px;
   background: #fcda43;
   border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(-70%, -70%) scale(0);
   opacity: 1;
-  animation: expandir 2.5s forwards;
+  animation: expandir 3s forwards;
   z-index: 9999;
 }
 
@@ -116,6 +116,7 @@ p{
   border-top: 50px solid #ffbb00; /* esta é a seta */
   animation: subirDescer 1s infinite ease-in-out;
   z-index: 9999;
+
 }
 .seta-amarela3 {
   position: absolute;

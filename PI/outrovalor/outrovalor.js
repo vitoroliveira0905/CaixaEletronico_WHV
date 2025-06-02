@@ -80,11 +80,11 @@ function atualizarInputFormatado() {
   if (btn2) btn2.disabled = !valorValido;
 }
 
-window.digitar = function(caracter) {
+window.digitar = function (caracter) {
   if (isNaN(caracter)) return;
 
   if (valorNumerico.length >= 3) return; // Limite: 3 dígitos (até 1000 reais)
-  
+
   valorNumerico += caracter;
   atualizarInputFormatado();
 };
@@ -97,10 +97,16 @@ window.limparCampo = function () {
 window.enviarValor = function () {
   const usuario = getParametro("usuario");
   const valorFinal = parseInt(valorNumerico || "0") * 10;
-
   if (valorFinal < 10 || valorFinal > 1000) {
     alert("Insira um valor entre R$ 10,00 e R$ 1000,00.");
     return false;
+  }
+
+  const dados = dadosUsuarios[usuario];
+  
+  if (valorFinal > dados.saldo) {
+    alert("Valor de saque maior que o saldo disponível.")
+    return;
   }
 
   const valorFormatado = `R$ ${valorFinal},00`;
@@ -108,4 +114,3 @@ window.enviarValor = function () {
   return false;
 };
 
- 

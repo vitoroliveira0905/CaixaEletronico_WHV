@@ -47,4 +47,8 @@ function redirecionarComDelay(usuario) {
   }, 1000);
 }
 
+document.getElementById("sair").onclick = function() {
+  window.location.href = `../index.html`;
+};
+
 

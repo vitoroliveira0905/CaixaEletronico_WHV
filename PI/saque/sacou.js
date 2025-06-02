@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   setTimeout(() => {
-    document.getElementById('mensagem').textContent = "Notas entregues:";
+    document.getElementById('mensagem-saque').textContent = "Notas entregues:";
     const container = document.getElementById('saidaNotas');
 
     notas.forEach((valor, index) => {

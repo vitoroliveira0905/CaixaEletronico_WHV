@@ -12,7 +12,7 @@ function iniciarTransicao(event) {
   document.body.appendChild(efeito);
 
   setTimeout(() => {
-    window.location.href = "../pagina_inicial/paginainicial.html";
+    window.location.href = "pagina_inicial/paginainicial.html";
   }, 1500);
 }
 

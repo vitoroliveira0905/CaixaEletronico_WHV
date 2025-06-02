@@ -31,16 +31,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
-  document.getElementById("btn-voltar").onclick = function() {
+  document.getElementById("btn-voltar").onclick = function () {
     window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
 
-  document.getElementById("btn2-voltar").onclick = function() {
+  document.getElementById("btn2-voltar").onclick = function () {
     window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
 
   // Funções para seleção e digitação
-  window.selecionarCampo = function(idCampo) {
+  window.selecionarCampo = function (idCampo) {
     campoSelecionado = document.getElementById(idCampo);
     document.getElementById("escolhaconta").style.border = "2px solid transparent";
     document.getElementById("escolhavalor").style.border = "2px solid transparent";
@@ -52,12 +52,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   window.digitar = function (caracter) {
     if (!campoSelecionado) return;
-  
+
     if (campoSelecionado.id === "escolhavalor") {
       if (valorDigitado.length >= 5) return; // limite de 5 dígitos, ex: 99999
-  
+
       valorDigitado += caracter;
-  
+
       let valorFormatado = `R$${parseInt(valorDigitado)},00`;
       campoSelecionado.value = valorFormatado;
     } else {
@@ -77,25 +77,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   };
 
-  window.redirecionarConfirmacao = function() {
+  window.redirecionarConfirmacao = function () {
     let conta = document.getElementById("escolhaconta").value;
     let valor = document.getElementById("escolhavalor").value;
-  
+
     if (conta === "") {
       alert("Insira a conta");
       return false;
     }
-  
+
     if (conta.length !== 4 || !/^\d{4}$/.test(conta)) {
       alert("A conta deve conter exatamente 4 dígitos.");
       return false;
     }
-  
+
     if (valor === "R$0,00") {
       alert("Insira um valor");
       return false;
     }
-  
+
     window.location.href = `../confirmacao/confirmacaodeposito.html?usuario=${encodeURIComponent(getParametro("usuario"))}&conta=${conta}&valor=${valor}`;
   };
 

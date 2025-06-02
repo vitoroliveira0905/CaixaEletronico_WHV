@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   function redirecionarConfirmacao(valor) {
+    if(valor > dados.saldo){
+      alert("Valor de saque maior que o saldo disponível.")
+      return;
+    }
     window.location.href = `../confirmacao/confirmacao.html?usuario=${encodeURIComponent(usuario)}&valor=${valor}`;
   }
 

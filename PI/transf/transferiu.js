@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   setTimeout(() => {
-    document.getElementById('mensagem').textContent = "Transferência realizada!";
+    document.getElementById('mensagem-transferencia').textContent = "Transferência realizada!";
     setTimeout(() => {
       window.location.href = `../conta/conta_paginainicial.html?usuario=${usuario}`;
     }, 2000);
