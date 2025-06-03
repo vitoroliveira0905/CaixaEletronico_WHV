@@ -23,11 +23,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   const destinatario = dadosUsuarios[conta];
 
   if (!remetente) {
-    alert("Usuário não encontrado.");
+    alerta.textContent = "Usuário não encontrado.";
+    alerta.style.display = "block";
+    setTimeout(() => {
+      alerta.style.display = "none";
+  }, 3000);
     return;
   }
   if (!destinatario) {
-    alert("Conta de destino não encontrada.");
+    alerta.textContent = "Conta de destino não encontrada.";
+    alerta.style.display = "block";
+    setTimeout(() => {
+      alerta.style.display = "none";
+  }, 3000);
     return;
   }
 
@@ -50,18 +58,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Débito do remetente
     remetente.saldo -= valorNumerico;
     if (!Array.isArray(remetente.extrato)) remetente.extrato = [];
-    remetente.extrato.push({
+    remetente.extrato.unshift({
       data: formatarDataHoje(),
-      descricao: "transferência enviada",
+      descricao: `Transferência enviada para ${destinatario.nome}`,
       valor: -valorNumerico
     });
 
     // Crédito do destinatário
     destinatario.saldo += valorNumerico;
     if (!Array.isArray(destinatario.extrato)) destinatario.extrato = [];
-    destinatario.extrato.push({
+    destinatario.extrato.unshift({
       data: formatarDataHoje(),
-      descricao: "transferência recebida",
+      descricao: `Transferência recebida de ${remetente.nome}`,
       valor: valorNumerico
     });
 
@@ -71,7 +79,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       extrato: remetente.extrato
     });
     if (!resultadoRemetente.sucesso) {
-      alert("Erro ao atualizar saldo do remetente!");
+      alerta.textContent = "Erro ao atualizar saldo do remetente!";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
       return;
     }
 
@@ -81,7 +93,11 @@ document.addEventListener("DOMContentLoaded", async () => {
       extrato: destinatario.extrato
     });
     if (!resultadoDestinatario.sucesso) {
-      alert("Erro ao atualizar saldo do destinatário!");
+      alerta.textContent = "Erro ao atualizar saldo do destinatário!";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
       return;
     }
 

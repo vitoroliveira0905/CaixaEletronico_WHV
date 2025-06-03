@@ -27,11 +27,11 @@ window.limparCampo = function() {
 window.verificarSenha = function() {
   const inputSenha = document.getElementById("senhainserida");
   const senhaInserida = inputSenha ? inputSenha.value : "";
-  const mensagem = document.getElementById("mensagem");
+  const alerta = document.getElementById("alerta");
 
   if (!senhaCorreta) {
-    mensagem.textContent = "Erro ao carregar dados do usuário.";
-    mensagem.style.display = "block";
+    alerta.textContent = "Erro ao carregar dados do usuário.";
+    alerta.style.display = "block";
     return;
   }
 
@@ -42,10 +42,10 @@ window.verificarSenha = function() {
     if (tentativas >= maxTentativas) {
       window.location.href = "../pagina_inicial/paginainicial.html?bloqueado=true";
     } else {
-      mensagem.textContent = `Senha incorreta. Tentativa ${tentativas} de ${maxTentativas}.`;
-      mensagem.style.display = "block";
+      alerta.textContent = `Senha incorreta. Tentativa ${tentativas} de ${maxTentativas}.`;
+      alerta.style.display = "block";
       setTimeout(() => {
-        mensagem.style.display = "none";
+        alerta.style.display = "none";
         if (inputSenha) inputSenha.value = "";
       }, 3000);
     }
@@ -57,11 +57,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   await carregarDadosUsuarios();
   dados = dadosUsuarios[usuario];
 
-  const mensagem = document.getElementById("mensagem");
+  const alerta = document.getElementById("alerta");
 
   if (!dados) {
-    mensagem.textContent = "Usuário não encontrado.";
-    mensagem.style.display = "block";
+    alerta.textContent = "Usuário não encontrado.";
+    alerta.style.display = "block";
     return;
   }
 
@@ -74,10 +74,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
-  // Mensagem de bloqueio, se necessário
+  // alerta de bloqueio, se necessário
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get("bloqueado") === "true") {
-    mensagem.textContent = "Conta bloqueada por excesso de tentativas.";
-    mensagem.style.display = "block";
+    alerta.textContent = "Conta bloqueada por excesso de tentativas.";
+    alerta.style.display = "block";
   }
 });

@@ -20,7 +20,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   const dados = dadosUsuarios[usuario];
 
   if (!dados) {
-    alert("Usuário não encontrado.");
+    alerta.textContent = "Usuário não encontrado.";
+    alerta.style.display = "block";
+    setTimeout(() => {
+      alerta.style.display = "none";
+  }, 3000);
     return;
   }
 
@@ -82,17 +86,29 @@ document.addEventListener("DOMContentLoaded", async () => {
     let valor = document.getElementById("escolhavalor").value;
 
     if (conta === "") {
-      alert("Insira a conta");
+      alerta.textContent = "Insira a conta";
+      alerta.style.display = "block";
+        setTimeout(() => {
+          alerta.style.display = "none";
+        }, 3000);
       return false;
     }
 
     if (conta.length !== 4 || !/^\d{4}$/.test(conta)) {
-      alert("A conta deve conter exatamente 4 dígitos.");
+      alerta.textContent = "A conta deve conter exatamente 4 dígitos.";
+      alerta.style.display = "block";
+        setTimeout(() => {
+          alerta.style.display = "none";
+        }, 3000);
       return false;
     }
 
     if (valor === "R$0,00") {
-      alert("Insira um valor");
+        alerta.textContent = "Insira um valor";
+        alerta.style.display = "block";
+        setTimeout(() => {
+          alerta.style.display = "none";
+        }, 3000);
       return false;
     }
 

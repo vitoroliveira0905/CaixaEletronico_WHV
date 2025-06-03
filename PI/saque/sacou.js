@@ -11,7 +11,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   const dados = dadosUsuarios[usuario];
 
   if (!dados) {
-    alert("Usuário não encontrado.");
+    alerta.textContent = "Usuário não encontrado.";
+    alerta.style.display = "block";
+    setTimeout(() => {
+      alerta.style.display = "none";
+  }, 3000);
     return;
   }
 
@@ -29,7 +33,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   const valorSaque = parseFloat(valorTexto);
 
   if (isNaN(valorSaque)) {
-    alert("Valor de saque inválido.");
+    alerta.textContent = "Valor de saque inválido.";
+    alerta.style.display = "block";
+    setTimeout(() => {
+      alerta.style.display = "none";
+  }, 3000);
     return;
   }
 
@@ -45,7 +53,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   if (restante > 0) {
-    alert("Não é possível sacar esse valor com as notas disponíveis.");
+    alerta.textContent = "Não é possível sacar esse valor com as notas disponíveis.";
+    alerta.style.display = "block";
+    setTimeout(() => {
+      alerta.style.display = "none";
+  }, 3000);
     return;
   }
 

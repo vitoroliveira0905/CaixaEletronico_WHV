@@ -6,13 +6,18 @@ function getParametro(nome) {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const conta = getParametro("conta");
+  const usuario = getParametro("usuario");
   await carregarDadosUsuarios();
-  const dados = dadosUsuarios[conta];
+  const dados = dadosUsuarios[usuario];
 
   if (!dados) {
-    alert("Conta de destino não encontrada.");
-    return;
+      alerta.textContent = "Conta de destino não encontrada.";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
+  return;
+ 
   }
 
   let imagem = document.getElementById("foto");

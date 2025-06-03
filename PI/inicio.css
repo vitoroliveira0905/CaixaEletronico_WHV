@@ -22,9 +22,9 @@ html {
 
 .btn-invisivel {
   position: absolute;
-  width: 12%;    /* ajuste conforme necessário */
-  height: 30%;   /* ajuste conforme necessário */
-  opacity: 0;    /* invisível */
+  width: 12%;    
+  height: 30%;   
+  opacity: 0;    
   cursor: pointer;
   border: none;
   background: black;
@@ -34,9 +34,9 @@ html {
 
 .btn-invisivel2 {
   position: absolute;
-  width: 18%;    /* ajuste conforme necessário */
-  height: 30%;   /* ajuste conforme necessário */
-  opacity: 0;    /* invisível */
+  width: 18%;    
+  height: 30%;   
+  opacity: 0;    
   cursor: pointer;
   border: none;
   background: black;
@@ -46,9 +46,9 @@ html {
 
 .btn-invisivel3 {
   position: absolute;
-  width: 25%;    /* ajuste conforme necessário */
-  height: 40%;   /* ajuste conforme necessário */
-  opacity: 0;    /* invisível */
+  width: 25%;    
+  height: 40%;   
+  opacity: 0;    
   cursor: pointer;
   border: none;
   background: black;

@@ -20,8 +20,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const dados = dadosUsuarios[usuario];
 
   if (!dados) {
-    alert("Usuário não encontrado.");
-    return;
+  
+    alerta.textContent = "Usuário não encontrado.";
+    alerta.style.display = "block";
+    setTimeout(() => {
+      alerta.style.display = "none";
+  }, 3000);
+  return;
   }
 
   let imagem = document.getElementById("foto");
@@ -82,29 +87,49 @@ document.addEventListener("DOMContentLoaded", async () => {
     let valor = document.getElementById("escolhavalor").value;
 
     if (conta === "") {
-      alert("Insira a conta");
-      return false;
+      alerta.textContent = "Insira a conta";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
+    return;
     }
 
     if (conta.length !== 4 || !/^\d{4}$/.test(conta)) {
-      alert("A conta deve conter exatamente 4 dígitos.");
-      return false;
+      alerta.textContent = "A conta deve conter exatamente 4 dígitos.";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
+    return;
     }
 
     if (conta === usuario) {
-      alert("Você não pode realizar transferências para si mesmo.");
-      return false;
+      alerta.textContent = "Você não pode realizar transferências para si mesmo.";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
+    return;
     }
 
     if (valor === "R$0,00") {
-      alert("Insira um valor");
-      return false;
+      alerta.textContent = "Insira um valor";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
+    return;
     }
     const valorNumerico = parseFloat(valor.replace("R$", "").replace(".", "").replace(",", ".").trim());
 
     if (valorNumerico > dados.saldo) {
-      alert("Valor de transferência maior que o saldo disponível.")
-      return false;
+      alerta.textContent = "Valor de transferência maior que o saldo disponível.";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
+    return;
     }
 
     window.location.href = `../confirmacao/confirmacaotransf.html?usuario=${encodeURIComponent(usuario)}&conta=${conta}&valor=${valor}`;

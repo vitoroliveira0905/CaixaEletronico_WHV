@@ -4,22 +4,32 @@
     "desc": "! Bem-vinda de volta!",
     "imagem": "../Imagens/cartao1.png",
     "senha": "1234",
-    "saldo": 1000,
+    "saldo": 1005,
     "extrato": [
       {
-        "data": "2023-10-01",
-        "descricao": "Pagamento de conta de luz",
-        "valor": -150
-      },
-      {
-        "data": "2023-10-05",
+        "data": "2025-06-03",
         "descricao": "Depósito em dinheiro",
-        "valor": 500
+        "valor": 300
       },
       {
-        "data": "2023-10-10",
-        "descricao": "Compra no supermercado",
+        "data": "2025-06-03",
+        "descricao": "Transferência para Tux da Silva enviada",
         "valor": -200
+      },
+      {
+        "data": "2025-06-03",
+        "descricao": "Transferência recebida",
+        "valor": 1580
+      },
+      {
+        "data": "2025-06-03",
+        "descricao": "Saque em dinheiro",
+        "valor": -200
+      },
+      {
+        "data": "2025-06-03",
+        "descricao": "Depósito em dinheiro",
+        "valor": 358
       }
     ]
   },
@@ -28,22 +38,32 @@
     "desc": "! Preparado para novas aventuras bancárias?",
     "imagem": "../Imagens/cartao2.png",
     "senha": "4321",
-    "saldo": 2000,
+    "saldo": 2502,
     "extrato": [
       {
-        "data": "2023-10-02",
-        "descricao": "Transferência recebida",
-        "valor": 300
+        "data": "2025-06-03",
+        "descricao": "Transferência recebida de William Reis",
+        "valor": 250
       },
       {
-        "data": "2023-10-06",
-        "descricao": "Pagamento de internet",
-        "valor": -100
+        "data": "2025-06-03",
+        "descricao": "Depósito em dinheiro de Cláudia Santos",
+        "valor": 22
       },
       {
-        "data": "2023-10-12",
-        "descricao": "Compra de livros online",
-        "valor": -250
+        "data": "2025-06-03",
+        "descricao": "Transferência de Cláudia Santos recebida",
+        "valor": 200
+      },
+      {
+        "data": "2025-06-03",
+        "descricao": "Saque em dinheiro",
+        "valor": -50
+      },
+      {
+        "data": "2025-06-03",
+        "descricao": "Transferência enviada",
+        "valor": -1580
       }
     ]
   },
@@ -52,22 +72,32 @@
     "desc": "! Sua conta está atualizada.",
     "imagem": "../Imagens/cartao3.png",
     "senha": "2025",
-    "saldo": 3000,
+    "saldo": 1780,
     "extrato": [
       {
-        "data": "2023-10-03",
-        "descricao": "Pagamento de mensalidade escolar",
-        "valor": -300
+        "data": "2025-06-03",
+        "descricao": "Saque em dinheiro",
+        "valor": -20
       },
       {
-        "data": "2023-10-07",
-        "descricao": "Recebimento de salário",
-        "valor": 2000
+        "data": "2025-06-03",
+        "descricao": "Transferência enviada para Tux da Silva",
+        "valor": -250
       },
       {
-        "data": "2023-10-13",
-        "descricao": "Compra de eletrônicos",
+        "data": "2025-06-03",
+        "descricao": "Depósito em dinheiro",
+        "valor": 200
+      },
+      {
+        "data": "2025-06-03",
+        "descricao": "Saque em dinheiro",
         "valor": -800
+      },
+      {
+        "data": "2025-06-03",
+        "descricao": "Transferência enviada",
+        "valor": -350
       }
     ]
   }

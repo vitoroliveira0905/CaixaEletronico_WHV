@@ -11,7 +11,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   const dados = dadosUsuarios[usuario];
 
   if (!dados) {
-    alert("Usuário não encontrado.");
+    alerta.textContent = "Usuário não encontrado.";
+    alerta.style.display = "block";
+    setTimeout(() => {
+      alerta.style.display = "none";
+  }, 3000);
     return;
   }
 
@@ -98,14 +102,22 @@ window.enviarValor = function () {
   const usuario = getParametro("usuario");
   const valorFinal = parseInt(valorNumerico || "0") * 10;
   if (valorFinal < 10 || valorFinal > 1000) {
-    alert("Insira um valor entre R$ 10,00 e R$ 1000,00.");
-    return false;
+    alerta.textContent = "Insira um valor entre R$ 10,00 e R$ 1000,00.";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
+    return ;
   }
 
   const dados = dadosUsuarios[usuario];
   
   if (valorFinal > dados.saldo) {
-    alert("Valor de saque maior que o saldo disponível.")
+      alerta.textContent = "Valor de saque maior que o saldo disponível.";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
     return;
   }
 

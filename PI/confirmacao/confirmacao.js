@@ -20,7 +20,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   const dados = dadosUsuarios[usuario];
 
   if (!dados) {
-    alert("Usuário não encontrado.");
+    alerta.textContent = "Usuário não encontrado.";
+    alerta.style.display = "block";
+    setTimeout(() => {
+      alerta.style.display = "none";
+  }, 3000);
     return;
   }
 
@@ -55,12 +59,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!Array.isArray(dados.extrato)) {
       dados.extrato = [];
     }
-    dados.extrato.push(novoExtrato);
+    dados.extrato.unshift(novoExtrato);
 
     // Salva no backend via função centralizada
     const resultado = await atualizarUsuario(usuario, { saldo: dados.saldo, extrato: dados.extrato });
     if (!resultado.sucesso) {
-      alert("Erro ao atualizar saldo!");
+      alerta.textContent = "Erro ao atualizar saldo!";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
       return;
     }
 

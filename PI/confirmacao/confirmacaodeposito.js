@@ -19,15 +19,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   const valor = getParametro("valor");
   await carregarDadosUsuarios();
 
-  const dados = dadosUsuarios[conta];
+  const remetente = dadosUsuarios[usuario];
+  const destinatario = dadosUsuarios[conta];
 
   let imagem = document.getElementById("foto");
-  if (imagem && dados && dados.imagem) {
-    imagem.src = dados.imagem;
-    imagem.alt = dados.nome;
+  if (imagem && remetente && remetente.imagem) {
+    imagem.src = remetente.imagem;
+    imagem.alt = remetente.nome;
     imagem.style.display = "block";
   }
-  
+
   const valorNumerico = parseFloat(valor.replace("R$", "").replace(".", "").replace(",", ".").trim());
 
   const valorFormatado = valorNumerico.toLocaleString("pt-BR", {
@@ -38,25 +39,36 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   async function processarDepositoERedirecionar() {
     // Atualiza o saldo localmente
-    dados.saldo += valorNumerico;
+    destinatario.saldo += valorNumerico;
 
     // Cria o novo lançamento do extrato
+    let descricao;
+    if (remetente === destinatario) {
+      descricao = "Depósito em dinheiro"
+    }
+    else {
+      descricao = `Depósito em dinheiro de ${remetente.nome}`
+    }
     const novoExtrato = {
       data: formatarDataHoje(),
-      descricao: "Depósito em dinheiro",
+      descricao: descricao,
       valor: +valorNumerico
     };
 
     // Atualiza o extrato localmente
-    if (!Array.isArray(dados.extrato)) {
-      dados.extrato = [];
+    if (!Array.isArray(destinatario.extrato)) {
+      destinatario.extrato = [];
     }
-    dados.extrato.push(novoExtrato);
+    destinatario.extrato.unshift(novoExtrato);
 
     // Salva no backend via função centralizada
-    const resultado = await atualizarUsuario(conta, { saldo: dados.saldo, extrato: dados.extrato });
+    const resultado = await atualizarUsuario(conta, { saldo: destinatario.saldo, extrato: destinatario.extrato });
     if (!resultado.sucesso) {
-      alert("Erro ao atualizar saldo!");
+      alerta.textContent = "Erro ao atualizar saldo!";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+    }, 3000);
       return;
     }
 
@@ -66,11 +78,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("btn-confirmar").addEventListener("click", processarDepositoERedirecionar);
   document.getElementById("btn2-confirmar").addEventListener("click", processarDepositoERedirecionar);
 
-  document.getElementById("cancel").onclick = function() {
+  document.getElementById("cancel").onclick = function () {
     window.location.href = `../depositar/depositar.html?usuario=${encodeURIComponent(usuario)}`;
   };
 
-  document.getElementById("cancela").onclick = function() {
+  document.getElementById("cancela").onclick = function () {
     window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
 });

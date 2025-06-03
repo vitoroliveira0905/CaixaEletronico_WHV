@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const dados = dadosUsuarios[usuario];
 
   if (!dados) {
-    alert("Usuário não encontrado.");
-    return;
+    alerta.textContent = "Usuário não encontrado.";
+    alerta.style.display = "block";
+  return;
   }
 
   let imagem = document.getElementById("foto");
@@ -24,7 +25,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function redirecionarConfirmacao(valor) {
     if(valor > dados.saldo){
-      alert("Valor de saque maior que o saldo disponível.")
+        alerta.textContent = "Valor de saque maior que o saldo disponível.";
+        alerta.style.display = "block";
+        setTimeout(() => {
+          alerta.style.display = "none";
+      }, 3000);
       return;
     }
     window.location.href = `../confirmacao/confirmacao.html?usuario=${encodeURIComponent(usuario)}&valor=${valor}`;
