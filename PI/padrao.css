@@ -417,7 +417,7 @@ header {
     margin-left: 70px;
     width: 565px;
     height: 365px;
-
+    pointer-events: none;
 }
 
 .alerta {

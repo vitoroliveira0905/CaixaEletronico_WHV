@@ -20,13 +20,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const dados = dadosUsuarios[usuario];
 
   if (!dados) {
-  
+
     alerta.textContent = "Usuário não encontrado.";
     alerta.style.display = "block";
     setTimeout(() => {
       alerta.style.display = "none";
-  }, 3000);
-  return;
+    }, 3000);
+    return;
   }
 
   let imagem = document.getElementById("foto");
@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       alerta.style.display = "block";
       setTimeout(() => {
         alerta.style.display = "none";
-    }, 3000);
-    return;
+      }, 3000);
+      return;
     }
 
     if (conta.length !== 4 || !/^\d{4}$/.test(conta)) {
@@ -100,8 +100,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       alerta.style.display = "block";
       setTimeout(() => {
         alerta.style.display = "none";
-    }, 3000);
-    return;
+      }, 3000);
+      return;
     }
 
     if (conta === usuario) {
@@ -109,8 +109,18 @@ document.addEventListener("DOMContentLoaded", async () => {
       alerta.style.display = "block";
       setTimeout(() => {
         alerta.style.display = "none";
-    }, 3000);
-    return;
+      }, 3000);
+      return;
+    }
+
+    const destinatario = dadosUsuarios[conta];
+    if (!destinatario) {
+      alerta.textContent = "A conta inserida não existe";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+      }, 3000);
+      return;
     }
 
     if (valor === "R$0,00") {
@@ -118,8 +128,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       alerta.style.display = "block";
       setTimeout(() => {
         alerta.style.display = "none";
-    }, 3000);
-    return;
+      }, 3000);
+      return;
     }
     const valorNumerico = parseFloat(valor.replace("R$", "").replace(".", "").replace(",", ".").trim());
 
@@ -128,8 +138,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       alerta.style.display = "block";
       setTimeout(() => {
         alerta.style.display = "none";
-    }, 3000);
-    return;
+      }, 3000);
+      return;
     }
 
     window.location.href = `../confirmacao/confirmacaotransf.html?usuario=${encodeURIComponent(usuario)}&conta=${conta}&valor=${valor}`;

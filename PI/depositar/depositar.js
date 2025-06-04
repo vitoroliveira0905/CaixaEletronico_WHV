@@ -103,6 +103,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       return false;
     }
 
+    const destinatario = dadosUsuarios[conta];
+    if (!destinatario) {
+      alerta.textContent = "A conta inserida não existe";
+      alerta.style.display = "block";
+      setTimeout(() => {
+        alerta.style.display = "none";
+      }, 3000);
+      return;
+    }
+
     if (valor === "R$0,00") {
         alerta.textContent = "Insira um valor";
         alerta.style.display = "block";
