@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     alerta.style.display = "block";
     setTimeout(() => {
       alerta.style.display = "none";
-  }, 3000);
+    }, 3000);
     return;
   }
 
@@ -25,13 +25,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.alt = dados.nome;
     imagem.style.display = "block";
   }
+  const saldoFormatado = Math.abs(dados.saldo).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  document.getElementById("saldo").innerText = saldoFormatado;
 
-  document.getElementById("saldo").innerText = dados.saldo;
-
-  document.getElementById("btn-voltar").onclick = function() {
+  document.getElementById("btn-voltar").onclick = function () {
     window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
-  document.getElementById("btn2-voltar").onclick = function() {
+  document.getElementById("btn2-voltar").onclick = function () {
     window.location.href = `../conta/conta_paginainicial.html?usuario=${encodeURIComponent(usuario)}`;
   };
 });

@@ -73,7 +73,7 @@ function atualizarInputFormatado() {
     valorNumerico = "100"; // 100 * 10 = 1000
   }
 
-  input.value = `R$ ${valor},00`;
+  input.value = Math.abs(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
   const btn1 = document.getElementById("btn-confirmar");
   const btn2 = document.getElementById("btn2-confirmar");
@@ -102,7 +102,7 @@ window.enviarValor = function () {
   const usuario = getParametro("usuario");
   const valorFinal = parseInt(valorNumerico || "0") * 10;
   if (valorFinal < 10 || valorFinal > 1000) {
-    alerta.textContent = "Insira um valor entre R$ 10,00 e R$ 1000,00.";
+    alerta.textContent = "Insira um valor entre R$ 10,00 e R$ 1.000,00.";
       alerta.style.display = "block";
       setTimeout(() => {
         alerta.style.display = "none";
@@ -121,7 +121,7 @@ window.enviarValor = function () {
     return;
   }
 
-  const valorFormatado = `R$ ${valorFinal},00`;
+  const valorFormatado = Math.abs(valorFinal).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   window.location.href = `../confirmacao/confirmacao.html?usuario=${encodeURIComponent(usuario)}&valor=${encodeURIComponent(valorFormatado)}`;
   return false;
 };

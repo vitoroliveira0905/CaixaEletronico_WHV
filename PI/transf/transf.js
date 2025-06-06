@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const campoConta = document.getElementById("escolhaconta");
   const campoValor = document.getElementById("escolhavalor");
   if (campoValor) {
-    campoValor.value = "R$0,00";
+    campoValor.value = "R$ 0,00";
     campoValor.readOnly = true;
   }
 
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       valorDigitado += caracter;
 
-      let valorFormatado = `R$${parseInt(valorDigitado)},00`;
+      let valorFormatado = Math.abs(valorDigitado).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
       campoSelecionado.value = valorFormatado;
     } else {
       // Para qualquer outro campo (ex: escolhaconta)
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   window.limparCampo = function () {
     if (campoSelecionado && campoSelecionado.id === "escolhavalor") {
       valorDigitado = "";
-      campoSelecionado.value = "R$0,00";
+      campoSelecionado.value = "R$ 0,00";
     } else if (campoSelecionado) {
       campoSelecionado.value = '';
     }
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
 
-    if (valor === "R$0,00") {
+    if (valor === "R$ 0,00") {
       alerta.textContent = "Insira um valor";
       alerta.style.display = "block";
       setTimeout(() => {

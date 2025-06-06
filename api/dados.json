@@ -4,32 +4,22 @@
     "desc": "! Bem-vinda de volta!",
     "imagem": "../Imagens/cartao1.png",
     "senha": "1234",
-    "saldo": 1005,
+    "saldo": 1000,
     "extrato": [
       {
-        "data": "2025-06-03",
-        "descricao": "Depósito em dinheiro",
-        "valor": 300
+        "data": "2025-06-06",
+        "descricao": "Transferência enviada para Tux da Silva",
+        "valor": -100
       },
       {
-        "data": "2025-06-03",
-        "descricao": "Transferência para Tux da Silva enviada",
-        "valor": -200
-      },
-      {
-        "data": "2025-06-03",
-        "descricao": "Transferência recebida",
-        "valor": 1580
-      },
-      {
-        "data": "2025-06-03",
+        "data": "2025-06-04",
         "descricao": "Saque em dinheiro",
-        "valor": -200
+        "valor": -250
       },
       {
-        "data": "2025-06-03",
+        "data": "2025-06-01",
         "descricao": "Depósito em dinheiro",
-        "valor": 358
+        "valor": 1000
       }
     ]
   },
@@ -38,32 +28,17 @@
     "desc": "! Preparado para novas aventuras bancárias?",
     "imagem": "../Imagens/cartao2.png",
     "senha": "4321",
-    "saldo": 2502,
+    "saldo": 2000,
     "extrato": [
+      {
+        "data": "2025-06-06",
+        "descricao": "Transferência recebida de Cláudia Santos",
+        "valor": 100
+      },
       {
         "data": "2025-06-03",
         "descricao": "Transferência recebida de William Reis",
         "valor": 250
-      },
-      {
-        "data": "2025-06-03",
-        "descricao": "Depósito em dinheiro de Cláudia Santos",
-        "valor": 22
-      },
-      {
-        "data": "2025-06-03",
-        "descricao": "Transferência de Cláudia Santos recebida",
-        "valor": 200
-      },
-      {
-        "data": "2025-06-03",
-        "descricao": "Saque em dinheiro",
-        "valor": -50
-      },
-      {
-        "data": "2025-06-03",
-        "descricao": "Transferência enviada",
-        "valor": -1580
       }
     ]
   },
@@ -72,12 +47,12 @@
     "desc": "! Sua conta está atualizada.",
     "imagem": "../Imagens/cartao3.png",
     "senha": "2025",
-    "saldo": 1780,
+    "saldo": 3000,
     "extrato": [
       {
         "data": "2025-06-03",
         "descricao": "Saque em dinheiro",
-        "valor": -20
+        "valor": -100
       },
       {
         "data": "2025-06-03",
@@ -88,16 +63,6 @@
         "data": "2025-06-03",
         "descricao": "Depósito em dinheiro",
         "valor": 200
-      },
-      {
-        "data": "2025-06-03",
-        "descricao": "Saque em dinheiro",
-        "valor": -800
-      },
-      {
-        "data": "2025-06-03",
-        "descricao": "Transferência enviada",
-        "valor": -350
       }
     ]
   }
