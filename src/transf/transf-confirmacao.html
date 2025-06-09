@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Eletrônico WHV</title>
+    <link href="../padrao.css" rel="stylesheet">
+    <link rel="shortcut icon" href="../Imagens/logo-whv-bank.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="background">
+
+    </div>
+    <div class="PAI">
+        <div class="barra-superior">
+            <img src="../Imagens/logo-whv-bank.png" style="height: 125px; margin-top: 25px;">
+            <h1>WHV</h1>
+        </div>
+        <div class="barra-inferior">
+            <div class="div-superior">
+                <div class="container-alerta" id="container-alerta">
+                    <div class="alerta" id="alerta"></div></div>
+                <div class="botoes-laterais">
+                    <button type="button" class="botao-superior"></button>
+                    <button type="button" class="botao-superior"></button>
+                    <button type="button" class="botao-superior" id="cancel"></button>
+
+                </div>
+                <div class="tela">
+                    <div class="tela-conta">
+                        <header>
+
+                        </header>
+
+
+                        <div class="container">
+                            <h2>Confirmação de Transferência</h2>
+                            <p>Você deseja transferir o valor de:</p>
+                            <h3 id="escolhavalor">R$ 0,00</h3>
+                        </div>
+
+
+                        <div class="opcoes-horizontal">
+                            <div class="opcao">
+                                <div class="esquerda"><img src="../Imagens/seta-esquerda.png" style="width: 12px;">
+                                </div>
+                                <div class="centro">cancelar</div>
+                                <div class="direita"></div>
+                            </div>
+
+                            <div class="opcao">
+                                <div class="esquerda"></div>
+                                <div class="centro">confirmar</div>
+                                <div class="direita"><img src="../Imagens/seta-direita.png" style="width: 12px;"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="botoes-laterais">
+                    <button type="button" class="botao-superior"></button>
+                    <button type="button" class="botao-superior"></button>
+                    <button type="button" class="botao-superior" id="btn-confirmar"></button>
+
+                </div>
+
+                <div class="inserircartao">
+
+                    <div class="detalhe"></div>
+                    <div class="inserir">
+
+                    </div>
+                </div>
+
+                <div class="slot-cartao">
+                    <img id="foto" src="" alt="" class="cartao" width="100%">
+                </div>
+
+            </div>
+
+            <div class="sacar-dinheiro">
+                <div class="dinheiro">
+
+                </div>
+            </div>
+
+
+            <div class="teclado-pai">
+                <div class="teclado-numerico">
+                    <div class="teclado-linha">
+                        <button type="button" class="button-numbers">1</button>
+                        <button type="button" class="button-numbers">2</button>
+                        <button type="button" class="button-numbers">3</button>
+                    </div>
+                    <div class="teclado-linha">
+                        <button type="button" class="button-numbers">4</button>
+                        <button type="button" class="button-numbers">5</button>
+                        <button type="button" class="button-numbers">6</button>
+                    </div>
+                    <div class="teclado-linha">
+                        <button type="button" class="button-numbers">7</button>
+                        <button type="button" class="button-numbers">8</button>
+                        <button type="button" class="button-numbers">9</button>
+                    </div>
+                    <div class="teclado-linha">
+                        <button type="button" class="button-numbers"></button>
+                        <button type="button" class="button-numbers">0</button>
+                        <button type="button" class="button-numbers"></button>
+                    </div>
+                </div>
+                <div class="teclado-lateral">
+                    <button type="button" style="background-color: #ff0000;" class="button-lateral"
+                        id="cancela">CANCELAR</button>
+                    <button type="button" style="background-color:#fffc00;" class="button-lateral">CORRIGIR</button>
+                    <button type="button" style="background-color: #05ff00;" class="button-lateral"
+                        id="btn2-confirmar">CONFIRMAR</button>
+                    <button type="button" style="background-color: #c0c0c0;" class="button-lateral"></button>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script type="module" src="transf-confirmacao.js"></script>
+</body>
