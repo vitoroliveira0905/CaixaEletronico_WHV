@@ -1,0 +1,18 @@
+🚀 Setup do Projeto — CaixaEletronico_WHV
+
+Siga os passos abaixo para configurar e executar o projeto localmente:
+
+1️⃣ Instalar dependências
+Dentro do repositório execute:
+
+    npm install express fs path
+
+2️⃣ Executar a API do projeto
+
+    node .\api\index.js   
+
+3️⃣ Instalar e executar a extensão Live Server
+
+4️⃣ Acessar a pasta `src` em http://127.0.0.1:5500/ no seu navegador
+
+✅ Pronto!

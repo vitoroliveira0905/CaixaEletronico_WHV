@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.alt = dados.nome;
     imagem.style.display = "block";
   }
+
   const saldoFormatado = Math.abs(dados.saldo).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
   document.getElementById("saldo").innerText = saldoFormatado;
 

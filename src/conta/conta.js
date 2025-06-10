@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("nome").innerText = dados.nome;
     document.getElementById("descricao").innerText = dados.desc;
 
+    //Redirecionamento de Pagínas 
+
     document.getElementById("saldo").onclick = function() {
         window.location.href = `../saldo/saldo.html?usuario=${encodeURIComponent(usuario)}`;
     };

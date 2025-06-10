@@ -35,6 +35,8 @@ window.verificarSenha = function() {
     return;
   }
 
+  //Limitação de tentativas
+
   if (senhaInserida === senhaCorreta) {
     window.location.href = `../conta/conta.html?usuario=${encodeURIComponent(usuario)}`;
   } else {

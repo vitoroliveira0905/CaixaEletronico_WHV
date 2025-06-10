@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     imagem.style.display = "block";
   }
 
+  //Animação envelope
+
   setTimeout(() => {
     document.getElementById('mensagem-deposito').textContent = "Envelope recebido!";
     const container = document.getElementById('saidaEnvelope');

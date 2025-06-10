@@ -61,6 +61,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
+  //Animação cedulas
+
   setTimeout(() => {
     document.getElementById('mensagem-saque').textContent = "Notas entregues:";
     const container = document.getElementById('saidaNotas');

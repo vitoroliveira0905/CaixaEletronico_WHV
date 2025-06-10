@@ -86,6 +86,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     let conta = document.getElementById("escolhaconta").value;
     let valor = document.getElementById("escolhavalor").value;
 
+    
+    //Tratamento de exceçoes
+
     if (conta === "") {
       alerta.textContent = "Insira a conta";
       alerta.style.display = "block";

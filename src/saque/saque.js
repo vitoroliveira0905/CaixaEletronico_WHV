@@ -35,6 +35,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     window.location.href = `saque-confirmacao.html?usuario=${encodeURIComponent(usuario)}&valor=${valor}`;
   }
 
+  //Escolha de Valor
+
   function redirecionarOutroValor() {
     window.location.href = `saque-valor.html?usuario=${encodeURIComponent(usuario)}`;
   }
