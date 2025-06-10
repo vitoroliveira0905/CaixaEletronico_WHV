@@ -5,7 +5,7 @@
 ## Tecnologias Utilizadas
 
 - **HTML/CSS/JavaScript**: Para construção das páginas do frontend.
-- **Node.js**: Para a contrução da API.
+- **Node.js**: Para a construção da API.
 - **Git e Github**: Para o versionamento e armazenamento de código.
 
 ## Requisitos
